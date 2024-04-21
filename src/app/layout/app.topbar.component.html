@@ -1,0 +1,115 @@
+<div class="layout-topbar">
+    <button pButton icon="pi pi-bars" (click)="onSideBarClick()">
+    </button>
+
+    <div class="flex flex-row">
+        <div class="flex align-items-center justify-content-between px-4 pt-1 flex-shrink-0">
+            <span class="inline-flex align-items-center gap-2">
+                <span class="font-semibold lg:text-2xl sm:text-sm text-primary w-full">{{companyName}}</span>
+            </span>
+        </div>
+    </div>
+
+    <button title="bar" type="button" class="p-link layout-topbar-menu-button layout-topbar-button"
+        (click)="op.show($event, targetE2)">
+        <div #targetE2>
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" size="normal"
+                shape="circle" [ngStyle]="{'margin-left': '50px'}"></p-avatar>
+        </div>
+    </button>
+
+    <div class="layout-topbar-menu" (click)="op.show($event, targetEl)">
+        <div #targetEl>
+            <p-chip [label]="userInfo['uname'].length > 5 ? userInfo['uname'].substring(0,5).toUpperCase() :
+                userInfo['uname'].substring(0,5).toUpperCase()" [pTooltip]="userInfo['uname']" tooltipPosition="left"
+                styleClass="cursor-pointer" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                alt="Avatar image"></p-chip>
+        </div>
+    </div>
+
+</div>
+
+<p-overlayPanel #op [showCloseIcon]="false" [style]="{'margin':'10px 1px 10px 10px'}">
+    <ng-template pTemplate="content">
+        <div class="flex flex-column pb-0">
+
+            <div class="card">
+                <div class="flex flex-column justify-content-start">
+                    <div class="text-center font-light text-gray-600 m-1">
+                        Signed In
+                    </div>
+                    <div class="text-center font-light text-gray-600 m-1">
+                        {{userInfo['uname'] | uppercase}}
+                    </div>
+                    <div class="text-center font-light text-orange-600 m-1">
+                        {{userInfo['cader']}}
+                    </div>
+                    <div class="text-center font-bold text-sm">
+                        {{userInfo['loggedInTime']}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="card cursor-pointer" >
+                Edit Profile picture
+            </div> -->
+
+            <div class="text-left">
+                <div (click)="onSignOutClick()" class="no-underline cursor-pointer">
+                    <i class="pi pi-sign-out"></i>
+                    Sign Out
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-overlayPanel>
+
+
+<!-- <div class="card flex justify-content-center"> -->
+<p-sidebar #sidebarRef [(visible)]="Visible">
+    <ng-template pTemplate="headless">
+        <div class="flex flex-column h-full">
+            <div class="flex align-items-center justify-content-between px-1 pt-1 flex-shrink-0">
+                <span class="inline-flex align-items-center gap-1">
+                    <span class="font-semibold text-2xl text-primary w-full">{{companyName}}</span>
+                </span>
+                <span>
+                    <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true"
+                        outlined="true" styleClass="h-1rem w-1rem ml-2"></p-button>
+                </span>
+            </div>
+            <div class="overflow-y-auto">
+                <ul class="list-none p-1 m-0" *ngFor="let tab of model">
+                    <li>
+                        <div pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown"
+                            leaveToClass="hidden" leaveActiveClass="slideup"
+                            class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple">
+                            <span class="font-medium">{{ tab.label}}</span>
+                            <!-- <i class="pi pi-chevron-down"></i> -->
+                        </div>
+                        <ul class="list-none p-0 m-0 overflow-hidden">
+                            <li pRipple pButton *ngFor="let tabs of tab.items" [label]="tabs.label" class="text-white flex align-items-center cursor-pointer p-3 border-round text-700 
+                            p-ripple
+                            m-1" styleClass="p-button-rounded" (click)="onClick(tabs)">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-auto">
+                <hr class="mb-1 mx-1 border-top-1 border-none surface-border" />
+                <div pRipple (click)="onSignOutClick()" class="m-3 flex align-items-center cursor-pointer p-1 gap-2 border-round text-700 
+                    no-underline">
+                    <i class="pi pi-sign-out"></i>
+                    Sign Out {{userInfo['uname']}}
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-sidebar>
+
+<style>
+    :host ::ng-deep .p-button {
+        margin-left: -19px !important;
+    }
+</style>

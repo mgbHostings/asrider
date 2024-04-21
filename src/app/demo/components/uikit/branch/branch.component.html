@@ -1,0 +1,390 @@
+<div class="card">
+    <div class="flex justify-content-between flex-wrap">
+        <div class="flex align-items-center justify-content-center  font-bold border-round">
+            Branches List
+        </div>
+        <div class="flex align-items-center justify-content-center  font-bold border-round">
+            <!-- 2 -->
+        </div>
+        <div class="flex align-items-center justify-content-center w-6rem h-1rem font-bold border-round">
+            <button pButton pRipple label="Add new" [loading]=false class="p-button-success cursor-pointer"
+                (click)="onClick(null,'NEW')"></button>
+        </div>
+    </div>
+</div>
+<div class="grid">
+    <ng-container *ngIf="crudGrid.length>0">
+        <div class="col-12 lg:col-3 xl:col-3 md:col-4 sm:col-12" *ngFor="let userDetails of crudGrid;let userIn=index;">
+            <div class="card">
+                <div class="flex justify-content-between flex-row">
+                    <div class="flex align-items-center justify-content-start border-round">
+                        <!-- <p-avatar [image]="userDetails['cLogo']" size="normal" shape="circle"></p-avatar> -->
+                        <div class="w-full ml-3 ml-2 text-orange-400">
+                            {{userDetails.bname | uppercase}}
+
+                        </div>
+                    </div>
+                    <div class="flex align-items-center justify-content-end">
+                        <!-- <div  (click)="onClick(userDetails, 'VIEW')">
+                        <i class="pi pi-eye"></i>
+                    </div> -->
+                        <div (click)="onClick(userDetails, 'EDIT')" class="cursor-pointer">
+                            <i class="pi pi-file-edit"></i>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex  flex-row">
+                    <div class="grid">
+                        <div class="col-12">
+                            <div class="w-full mt-2 mb-1 justify-content-start text-cyan-500">
+                                Branch Code
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                <p-badge [value]="userDetails.bcode | uppercase"></p-badge>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="w-full mt-2 mb-1 justify-content-start text-cyan-500">
+                                Company
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                {{userDetails.cname | uppercase}}
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="w-full text-cyan-500 mb-1 justify-content-start">
+                                Branch Opened On
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                {{userDetails.b_opn_dt | uppercase}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Contact No.
+                            </div>
+                            <div class="w-full justify-content-end">
+                                {{userDetails.contact_no}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Country
+                            </div>
+                            <div class="w-full justify-content-end">
+                                {{userDetails.countryname}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                State
+                            </div>
+                            <div class="w-full justify-content-end">
+                                {{userDetails.state}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                City
+                            </div>
+                            <div class="w-full justify-content-end">
+                                {{userDetails.cityname}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Pincode
+                            </div>
+                            <div class="w-full justify-content-end">
+                                {{userDetails.pincode}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Description:
+                            </div>
+                            <div class="w-full justify-content-end overflow-hidden text-overflow-ellipsis">
+                                {{userDetails.desc}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Status:
+                            </div>
+                            <div class="w-full justify-content-end overflow-hidden text-overflow-ellipsis">
+                                <span *ngIf="userDetails.active == true"
+                                    class="customer-badge status-qualified">Active</span>
+                                <span *ngIf="userDetails.active == false"
+                                    class="customer-badge status-unqualified">Inactive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="grid">
+                    <div class="col-12">
+                        <div class="grid">
+                            <div class="">
+                                Cader:
+                            </div>
+                            <div class="">
+                                {{userDetails.cadername | uppercase}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="text-center   font-bold">
+                            {{userDetails.branchname | uppercase}}
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="">
+                            {{userDetails.desc | uppercase}}
+                        </div>
+                    </div>
+
+                </div> -->
+
+                </div>
+            </div>
+        </div>
+        <p-scrollTop></p-scrollTop>
+    </ng-container>
+    <div class="col-12" *ngIf="crudGrid.length==0">
+        <div class="card">
+            <div class="grid">
+                <div class="col-12 text-center">
+                    No data found...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-sidebar [(visible)]="isShowForm" [fullScreen]="true" [showCloseIcon]="isShowSidebarClose" [styleClass]="'test'"
+    [closeOnEscape]="isCloseOnEscape">
+    <div class="grid">
+        <div class="col-12 col-offset-0  md:col-6 md:col-offset-3 lg:col-4  lg:col-offset-4 xl:col-4 xl:col-offset-4">
+            <div class="card  p-fluid">
+                <div class="grid">
+                    <h5>Create Branch </h5>
+
+                    <!-- <div class="col-12">
+                   <label htmlFor="name1">Country/ State/ City</label>
+                   <div class="w-5">
+                       
+                       <p-cascadeSelect [(ngModel)]="selectedCity" [options]="countries" optionLabel="cname" optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" [style]="{ minWidth: '14rem' }" placeholder="Select a City"></p-cascadeSelect>
+                       <small>Country/ State/ City is required.</small>
+                   </div>
+                   
+               </div> -->
+                    <div class="col-12">
+                        <label for="firstname2">Company</label>
+                        <p-dropdown [options]="companyList" [(ngModel)]="createMaster.cId" optionLabel="label"
+                            optionValue="value" (onChange)="onCompanies($event)" [filter]="true"
+                            [disabled]="mode=='VIEW' "></p-dropdown>
+                        <small *ngIf="errorMessages.cId != ''">{{ errorMessages.cId}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label for="firstname2">Branch Name</label>
+                        <input id="firstname2" type="text" [(ngModel)]="createMaster.bname" [disabled]="mode=='VIEW'"
+                            pInputText class="ng-invalid ng-dirty" (blur)="generateCode(createMaster)">
+                        <small *ngIf="errorMessages.bname != ''">{{ errorMessages.bname}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="name1">Branch Code</label>
+                        <input id="firstname2" type="text" pInputText [disabled]="true"
+                            [(ngModel)]="createMaster.bcode">
+                        <!-- 
+                        <input id="firstname2" type="text" pInputText [autocomplete]="'off'"
+                            [(ngModel)]="createMaster.contact_no" class="p-2"> -->
+                        <!-- <small *ngIf="errorMessages.contact_no != ''">{{ errorMessages.contact_no}}</small> -->
+                        <!-- <small>Enter your username to reset your password.</small> -->
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="name1">Contact No.</label>
+                        <p-inputNumber [(ngModel)]="createMaster.contact_no" mode="decimal" inputId="withoutgrouping"
+                            [disabled]="mode=='VIEW'" class="ng-invalid ng-dirty" [maxlength]="10"
+                            [useGrouping]="false"> </p-inputNumber>
+                        <!-- 
+                        <input id="firstname2" type="text" pInputText [autocomplete]="'off'"
+                            [(ngModel)]="createMaster.contact_no" class="p-2"> -->
+                        <small *ngIf="errorMessages.contact_no != ''">{{ errorMessages.contact_no}}</small>
+                    </div>
+                    <div>
+                        <label for="firstname2">Branch Opened On.</label>
+                        <p-inputMask mask="99/99/9999" [(ngModel)]="createMaster.b_opn_dt" [disabled]="mode=='VIEW'"
+                            class="ng-invalid ng-dirty" placeholder="01/11/2023"></p-inputMask>
+                        <small *ngIf="errorMessages.b_opn_dt != ''">{{ errorMessages.b_opn_dt}}</small>
+                    </div>
+                    <div class="col-6">
+                        <label htmlFor="state">Country / State/ City</label>
+                        <p-cascadeSelect [(ngModel)]="createMaster.city" [options]="addressList" [optionLabel]="'cname'"
+                            [disabled]="mode=='VIEW'" [optionGroupLabel]="'name'"
+                            [optionGroupChildren]="['states', 'cities']" class="ng-invalid ng-dirty"
+                            placeholder="Select a City" [style]="{ minWidth: '14rem' }"
+                            placeholder="Select a City"></p-cascadeSelect>
+                        <small *ngIf="errorMessages.city != ''">{{ errorMessages.city}}</small>
+
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="state">Pincode</label>
+                        <p-inputNumber [(ngModel)]="createMaster.pincode" mode="decimal" inputId="withoutgrouping"
+                            [disabled]="mode=='VIEW'" class="ng-invalid ng-dirty" [maxlength]="6" [useGrouping]="false">
+                        </p-inputNumber>
+
+                        <!-- <input id="firstname2" type="text" pInputText [autocomplete]="'off'"
+                            [(ngModel)]="createMaster.pincode" class="p-2"> -->
+                        <small *ngIf="errorMessages.pincode != ''">{{ errorMessages.pincode}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="state">Description </label>
+                        <textarea rows="5" cols="30" pInputTextarea [disabled]="mode=='VIEW'"
+                            [(ngModel)]="createMaster.desc"></textarea>
+                        <!-- <small>Loan amount is required.</small> -->
+                    </div>
+
+                    <div class="col-12">
+                        <input type="checkbox" name="master" id="1" [(ngModel)]="createMaster.active"
+                            [disabled]="mode=='VIEW' || mode == 'NEW'">
+                        <label for="lastname2" class="ml-2">Active</label>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="grid">
+                            <div class="col-6">
+                                <button pButton pRipple label="Clear" (click)="hideDialog()" [disabled]="['',null,undefined].includes(createMaster.pincode) || 
+                                ['',null,undefined].includes(createMaster.b_opn_dt) || 
+                                ['',null,undefined].includes(createMaster.bname) ||
+                                ['',null,undefined].includes(createMaster.city) ||
+                                ['',null,undefined].includes(createMaster.cId) 
+                                " class="p-button-outlined"></button>
+
+                            </div>
+                            <div class="col-6">
+                                <button pButton pRipple label="Submit" (click)="saveProduct()" [disabled]="['',null,undefined].includes(createMaster.pincode) || 
+                                ['',null,undefined].includes(createMaster.b_opn_dt) || 
+                                ['',null,undefined].includes(createMaster.bname) ||
+                                ['',null,undefined].includes(createMaster.city) ||
+                                ['',null,undefined].includes(createMaster.cId) 
+                                " [loading]="submitloading" class="p-button-success"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 		
+           <div class="card p-fluid">
+               <h5>Vertical Grid</h5>
+               <div class="p-formgrid grid">
+                   <div class="field col">
+                       <label htmlFor="name2">Name</label>
+                       <input pInputText id="name2" type="text" />
+                   </div>
+                   <div class="field col">
+                       <label htmlFor="email2">Email</label>
+                       <input pInputText id="email2" type="text" />
+                   </div>
+                   <div class="field col">
+                       <label htmlFor="name2">Name</label>
+                       <input pInputText id="name2" type="text" />
+                   </div>
+                   <div class="field col">
+                       <label htmlFor="email2">Email</label>
+                       <input pInputText id="email2" type="text" />
+                   </div>
+               </div>
+           </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="col-12 md:col-6"> -->
+            <!-- <div class="card p-fluid">
+               <h5>Horizontal</h5>
+               <div class="field grid">
+                   <label htmlFor="name3" class="col-12 mb-2 md:col-2 md:mb-0">Name</label>
+                   <div class="col-12 md:col-10">
+                       <input pInputText id="name3" type="text" />
+                   </div>
+               </div>
+               <div class="field grid">
+                   <label htmlFor="email3" class="col-12 mb-2 md:col-2 md:mb-0">Email</label>
+                   <div class="col-12 md:col-10">
+                       <input pInputText id="email3" type="text" />
+                   </div>
+               </div>
+           </div> -->
+
+            <!-- <div class="card">
+               <h5>Inline</h5>
+               <div class="formgroup-inline">
+                   <div class="field">
+                       <label htmlFor="firstname1" class="p-sr-only">Firstname</label>
+                       <input pInputText id="firstname1" type="text" placeholder="Firstname" />
+                   </div>
+                   <div class="field">
+                       <label htmlFor="lastname1" class="p-sr-only">Lastname</label>
+                       <input pInputText id="lastname1" type="text" placeholder="Lastname" />
+                   </div>
+                   <button pButton label="Submit"></button>
+               </div>
+           </div> -->
+
+            <!-- <div class="card">
+               <h5>Help Text</h5>
+               <div class="field p-fluid">
+                   <label htmlFor="username">Username</label>
+                   <input pInputText id="username" type="text" />
+                   <small>Enter your username to reset your password.</small>
+               </div>
+           </div> -->
+            <!-- </div>  -->
+
+            <!-- <div class="col-12">
+           <div class="card">
+               <h5>Advanced</h5>
+               <div class="p-fluid p-formgrid grid">
+                   <div class="field col-12 md:col-6">
+                       <label htmlFor="firstname2">Firstname</label>
+                       <input pInputText id="firstname2" type="text" />
+                   </div>
+                   <div class="field col-12 md:col-6">
+                       <label htmlFor="lastname2">Lastname</label>
+                       <input pInputText id="lastname2" type="text" />
+                   </div>
+                   <div class="field col-12">
+                       <label htmlFor="address">Address</label>
+                       <input pInputTextarea id="address" rows="4" />
+                   </div>
+                   <div class="field col-12 md:col-6">
+                       <label htmlFor="city">City</label>
+                       <input pInputText id="city" type="text" />
+                   </div>
+                   <div class="field col-12 md:col-3">
+                       <label htmlFor="state">State</label>
+                       <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="selectedState"></p-dropdown>
+                   </div>
+    
+                   <div class="field col-12 md:col-3">
+                       <label htmlFor="zip">Zip</label>
+                       <input pInputText id="zip" type="text" />
+                   </div>
+               </div>
+           </div>
+       </div> -->
+        </div>
+    </div>
+
+</p-sidebar>
+
+<style>
+    :host ::ng-deep .p-cascadeselect-items {
+        max-height: 100px;
+        overflow: auto;
+    }
+    :host ::ng-deep .test .p-icon {
+        color: red !important;
+    }
+</style>
+
+<p-toast position="top-right" [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"
+    (onClose)="onMessageClose()"></p-toast>

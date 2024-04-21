@@ -1,0 +1,309 @@
+<div class="card">
+    <div class="flex justify-content-between flex-wrap">
+        <div class="flex align-items-center justify-content-center  font-bold border-round">
+            Disbursements ( Approved loans )
+        </div>
+
+    </div>
+</div>
+<div class="grid">
+    <ng-container *ngIf="crudGrid.length>0">
+        <div class="col-12 lg:col-3 xl:col-3 md:col-4 sm:col-12" *ngFor="let userDetails of crudGrid;let userIn=index;">
+            <div class="card">
+                <div class="flex justify-content-between flex-row">
+                    <div class="flex align-items-center justify-content-start border-round">
+                        <p-avatar [image]="userDetails['A']" size="normal" shape="circle"></p-avatar>
+                        <div class="w-full ml-3 ml-2 text-orange-400">
+                            {{userDetails.borrower | uppercase}}
+
+                        </div>
+                    </div>
+                    <div class="flex align-items-center justify-content-end">
+                        <div class="flex align-items-center  ml-1"
+                            *ngIf="!['A'].includes(userDetails.disbursementstatus)"
+                            (click)="onClick(userDetails, 'VIEW')">
+                            <i class="pi pi-eye"></i>
+                        </div>
+                        <div class="flex align-items-center 
+								 ml-1" (click)="onClick(userDetails, 'EDIT')" *ngIf="!['P','A','R','C'].includes(userDetails.approvalstatus)">
+                            <i class="pi pi-file-edit"></i>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex  flex-row">
+                    <div class="grid">
+
+
+                        <div class="col-12">
+                            <div class="w-full mt-2 mb-1 justify-content-start text-cyan-500">
+                                Disbursed status.
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                <span *ngIf="userDetails.disbursementstatus == 'A'"
+                                    class="order-badge order-delivered">Disbursed</span>
+                                <span *ngIf="userDetails.disbursementstatus == 'C'"
+                                    class="order-badge order-cancelled">Cancel</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 ">
+                            <div class="w-full text-cyan-500 mb-1 justify-content-start">
+                                Disbursed Payment
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                {{userDetails.paymenttype}}
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="w-full text-cyan-500 mb-1 justify-content-start">
+                                Disbursed remarks
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                {{userDetails.disbursementstatusremarks}}
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="w-full text-cyan-500 mb-1 justify-content-start">
+                                SMT CODE
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                {{userDetails.smtcode | uppercase}}
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="w-full text-cyan-500 mb-1 justify-content-start">
+                                Branch
+                            </div>
+                            <div class="w-full mb-1 justify-content-end">
+                                {{userDetails.branchName | uppercase}}
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Description:
+                            </div>
+                            <div class="w-full justify-content-end overflow-hidden text-overflow-ellipsis">
+                                {{userDetails.description}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="w-full justify-content-start text-cyan-500">
+                                Status:
+                            </div>
+                            <div class="w-full justify-content-end overflow-hidden text-overflow-ellipsis">
+                                <span *ngIf="userDetails.active == true"
+                                    class="userDetails-badge status-qualified">Active</span>
+                                <span *ngIf="userDetails.active == false"
+                                    class="userDetails-badge status-unqualified">Inactive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p-scrollTop></p-scrollTop>
+        </div>
+    </ng-container>
+    <div class="col-12" *ngIf="crudGrid.length==0">
+        <div class="card">
+            <div class="grid">
+                <div class="col-12 text-center">
+                    No data found...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-dialog [header]="headerText + '   Disbursement' " [(visible)]="isShowForm" [style]="{width:'50rem',height : '35rem'}"
+    [maximizable]="false">
+    <!-- <p-sidebar > -->
+    <div class="grid">
+        <div class="col-12">
+            <div class="card  p-fluid">
+                <div class="grid">
+                    <!-- <h5>Disbursement a Loan </h5> -->
+                    <!-- <div class="col-12">
+                        <label htmlFor="state">Borrower</label>
+                        <p-dropdown [options]="borrwoersList" [(ngModel)]="createMaster.borrowername"
+                            placeholder="Select Borrower" optionLabel="name" class="ng-invalid ng-dirty"
+                            optionValue="_id" [filter]="true" [disabled]="mode=='VIEW' "></p-dropdown>
+                        <small *ngIf="createMaster.borrowername != ''">
+                            {{ errorMessages.borrowername}}
+                        </small>
+                    </div>
+                   
+                    <div class="col-12">
+                        <label htmlFor="state">SMT CODE </label>
+                        <input pInputText id="age1" type="text" [disabled]="true" [(ngModel)]="createMaster.smtcode" />
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="state">House type</label>
+                        <p-dropdown [options]="houseTypeList" [(ngModel)]="createMaster.housetype" optionLabel="label"
+                            optionValue="value" class="ng-invalid ng-dirty" [filter]="true"
+                            placeholder="Select House Type" [disabled]="mode=='VIEW' "></p-dropdown>
+                        <small *ngIf="errorMessages.housetype != ''">{{ errorMessages.housetype}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="state">Product type</label>
+                        <p-dropdown [options]="productTypeList" [(ngModel)]="createMaster.prodtype" optionLabel="label"
+                            optionValue="value" class="ng-invalid ng-dirty" [filter]="true" (onChange)="onProducttype()"
+                            placeholder="Select Product type" [disabled]="mode=='VIEW' "></p-dropdown>
+                        <small *ngIf="errorMessages.prodtype != ''">{{ errorMessages.prodtype}}</small>
+                    </div> -->
+                    <!-- <div class="col-12">
+                        <label htmlFor="state">Deposit List</label>
+                        <p-dropdown [options]="despositList" [(ngModel)]="createMaster.deposit" optionLabel="label"
+                            optionValue="value" class="ng-invalid ng-dirty" [filter]="true" placeholder="Select Deposit"
+                            [disabled]="mode=='VIEW' || createMaster.prodtype != 1 "></p-dropdown>
+                        <small *ngIf="errorMessages.deposit != ''">{{ errorMessages.deposit}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="state">Loan Amount </label>
+                        <p-dropdown [options]="loanAmountList" [(ngModel)]="createMaster.loanamount" optionLabel="label"
+                            optionValue="value" class="ng-invalid ng-dirty" [filter]="true"
+                            placeholder="Select Loan Amount" [disabled]="mode=='VIEW' "></p-dropdown>
+
+                    
+                        <small *ngIf="errorMessages.loanamount != ''">{{ errorMessages.loanamount}}</small>
+                    </div> -->
+                    <!-- <div class="col-12">
+                        <label htmlFor="state">Repay Mode </label>
+                        <p-dropdown [options]="loanShedule" [(ngModel)]="createMaster.loanschedule" optionLabel="label"
+                            optionValue="value" class="ng-invalid ng-dirty" [filter]="true"
+                            placeholder="Select Repay Mode" [disabled]="mode=='VIEW' "></p-dropdown>
+                        <small *ngIf="errorMessages.loanschedule != ''">{{ errorMessages.loanschedule}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="state">Loan tenure </label>
+                        <p-dropdown [options]="tenureList" [(ngModel)]="createMaster.tenure" optionLabel="label"
+                            optionValue="value" class="ng-invalid ng-dirty" [filter]="true"
+                            placeholder="Select Loan Tenture" [disabled]="mode=='VIEW' "></p-dropdown>
+                        <small *ngIf="errorMessages.tenure != ''">{{ errorMessages.tenure}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="age1">Bank</label>
+                        <input pInputText id="age1" type="text" [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.bankname" class="ng-invalid ng-dirty" />
+                        <small *ngIf="errorMessages.bankname != ''">{{ errorMessages.bankname}}</small>
+                    </div> -->
+                    <!-- <div class="col-12">
+                        <label htmlFor="age1">Account no</label>
+                        <input pInputText id="age1" type="text" [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.accountno" [maxLength]="18" class="ng-invalid ng-dirty" />
+                        <small *ngIf="errorMessages.accountno != ''">{{ errorMessages.accountno}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="age1">Bank Account Name</label>
+                        <input pInputText id="age1" type="text" [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.accountname" class="ng-invalid ng-dirty" />
+                        <small *ngIf="errorMessages.accountname != ''">{{ errorMessages.accountname}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="age1">IFSC Code</label>
+                        <input pInputText id="age1" type="text" [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.ifsc" class="ng-invalid ng-dirty" />
+                        <small *ngIf="errorMessages.ifsc != ''">{{ errorMessages.ifsc}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="name1">Surity Name</label>
+                        <input pInputText id="name1" type="text" [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.surityname" class="ng-invalid ng-dirty" />
+                        <small *ngIf="errorMessages.surityname != ''">{{ errorMessages.surityname}}</small>
+                    </div> -->
+                    <!-- <div class="col-12">
+                        <label htmlFor="name1">Surity Aadhar</label>
+                        <p-inputMask mask="9999-9999-9999" [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.surityaadhar" [disabled]="mode=='VIEW'"
+                            class="ng-invalid ng-dirty" [pKeyFilter]="'num'" placeholder="2222-2222-2222"></p-inputMask>
+                        <small *ngIf="errorMessages.surityaadhar != ''">{{ errorMessages.surityaadhar}}</small>
+
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="name1">Surity House type</label>
+                        <p-dropdown [options]="houseTypeList" [(ngModel)]="createMaster.surityhousetype"
+                            class="ng-invalid ng-dirty" optionLabel="label" optionValue="value" [filter]="true"
+                            [disabled]="mode=='VIEW' " placeholder="Select House Type"></p-dropdown>
+                        <small *ngIf="errorMessages.surityhousetype != ''">House type is required.</small>
+                    </div> -->
+                    <!-- <div class="col-12">
+                        <label htmlFor="name1">Surity Contact no</label>
+                        <input pInputText id="age1" type="text" [(ngModel)]="createMaster.contactnumber"
+                            placeholder="999999999" [disabled]="mode=='VIEW' " [minlength]="10" [maxlength]="10"
+                            class="ng-invalid ng-dirty" />
+
+                        <small *ngIf="errorMessages.contactnumber != ''">{{ errorMessages.contactnumber}}</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="name1">Description</label>
+
+                        <textarea rows="5" cols="30" pInputTextarea [disabled]="mode=='VIEW' "
+                            [(ngModel)]="createMaster.description"></textarea>
+
+                    </div>
+                    <div class="col-12">
+                        <input type="checkbox" name="master" id="1" [(ngModel)]="createMaster.active"
+                            [disabled]="mode=='VIEW' || mode == 'NEW'">
+                        <label for="lastname2" class="ml-2">Active</label>
+                    </div> -->
+
+                    <!-- <div class="col-6">
+                        <label htmlFor="name1">Loan Repayment Day ( In Month )</label>
+                        <input pInputText id="age1" type="text" [(ngModel)]="createMaster.repaymenttype"
+                            placeholder="1" [minlength]="1" [maxlength]="2" class="ng-invalid ng-dirty" />
+
+                    </div> -->
+                    <div class="col-6">
+                        <label htmlFor="name1">Payment Type</label>
+                        <p-dropdown [options]="pymentType" [(ngModel)]="createMaster.paymenttype"
+                            class="ng-invalid ng-dirty" optionLabel="label" optionValue="value" [filter]="true"
+                            placeholder="Select Payment Type" (onChange)="onloanStatusRemarks()"></p-dropdown>
+                        <small *ngIf="errorMessages.paymenttype != ''">Payment type is required.</small>
+                    </div>
+                    <div class="col-6">
+                        <label htmlFor="name1">Disbursement Status</label>
+                        <p-dropdown [options]="approvalsStatusList" [(ngModel)]="createMaster.disbursementstatus"
+                            class="ng-invalid ng-dirty" optionLabel="label" optionValue="value" [filter]="true"
+                            placeholder="Select Disbursement Status" (onChange)="onloanStatusRemarks()"></p-dropdown>
+                        <small *ngIf="errorMessages.disbursementstatus != ''">Loan Status is required.</small>
+                    </div>
+                    <div class="col-12">
+                        <label htmlFor="name1">{{loanStatusRemarks}} </label>
+                        <textarea rows="5" cols="30" pInputTextarea
+                            [(ngModel)]="createMaster.disbursementstatusremarks"></textarea>
+
+                        <!-- <small *ngIf="errorMessages.approvalstatus != ''">Loan Status is required.</small> -->
+                    </div>
+                    <div class="col-12">
+                        <div class="grid">
+                            <!-- <div class="col-6">
+                                <button pButton [disabled]="mode=='VIEW'" pRipple label="Clear" (click)="hideDialog()"
+                                    class="p-button-outlined"></button>
+
+                            </div> -->
+                            <div class="col-12">
+                                <button pButton pRipple label="Submit status" (click)="saveProduct()"
+                                    [loading]="submitloading" class="p-button-success"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <p-scrollTop></p-scrollTop>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </p-sidebar> -->
+</p-dialog>
+
+<style>
+    :host ::ng-deep .p-cascadeselect-items {
+        max-height: 100px;
+        overflow: auto;
+    }
+</style>
+
+<p-toast position="top-right" [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"
+    (onClose)="onMessageClose()"></p-toast>
