@@ -1,60 +1,45 @@
-<div class="surface-ground flex align-items-center surface-100 md:justify-content-center justify-content-center
-  min-h-screen min-w-screen p-input-filled overflow-hidden">
-    <div class="flex flex-column align-items-center justify-content-center md:p-3 ">
-        <div style="border-radius:10px;
-             padding:0.4rem; 
-             background: linear-gradient(50deg, var(--primary-color) 0%, rgba(12, 95, 150, 0) 20%);">
-            <div class="w-19rem surface-card p-5" style="border-radius:20px;">
-                <div class="text-center mb-2">
-                    <img src="assets/layout/images/sml" alt="Sakai logo" class=" w-6rem flex-shrink-0" height="50">
-                </div>
-                <div class="text-center mb-4">
-                    <h5 class="text-blue-400">Sign in to continue</h5>
-                </div>
-                <div class="flex flex-column align-items-center">
-                    <div class="mb-3 w-full">
-                        <label for="email1" class="block mb-1">Employee Name</label>
-                        <input id="email1" placeholder="Enter Employee Name" pInputText [autocomplete]="'off'"
-                            (blur)="getErrorMessages('uname')" [(ngModel)]="siginJson.uname"
-                            class="p-2 ng-invalid ng-dirty ">
-                        <div>
-                            <small *ngIf="errorMessages.uname!=''" class="text-red-600" id="username-help">
-                                {{errorMessages.uname}}
-                            </small>
-                        </div>
+<title>Login</title>
+
+<div class="as_pages flex-column gap-5 align-items-center justify-content-center">
+
+    <div class="as_logo_cntnt">
+        <div class="as_logo">
+            <label><span class="as_logo_single">AS</span> Riders</label>
+        </div>
+        <label>Join us to mnage your investments and create superior returns togethers</label>
+    </div>
+
+    <div class="as_log_pages">
+        <div class="box">
+            <div class="form">
+                <h2>Login</h2>
+                <div class="form_1">
+                    <div class="inputBox">
+                        <input type="text" required="required" placeholder="Mobile Number">
+                        <!-- <span>Mobile phone number</span> -->
+                        <i></i>
                     </div>
-                    <div class="mb-3 w-full">
-                        <label for="password1" class="block mb-1">Password</label>
-                        <p-password [(ngModel)]="siginJson.password" [toggleMask]="true" [feedback]="false"
-                            (onBlur)="getErrorMessages('password')" (keydown)="onKeyUp($event)"
-                            class="ng-invalid ng-dirty"></p-password>
-                        <div>
-                            <small *ngIf="errorMessages.pwd!=''" class="text-red-600" id="username-help">{{
-                                errorMessages.pwd
-                                }}
-                            </small>
-                        </div>
-                    </div>
+
                     <div>
-                        <button pButton label="Sign In" class="w-full " [loading]="loading"
-                            styleClass="p-button-rounded " (click)="signUpClick()"></button>
+                        <div class="inputBox">
+                            <input type="password" required="required" placeholder="Security Password">
+                            <!-- <span></span> -->
+                            <i></i>
+                        </div>
+                        <div class="links">
+                            <a href="#">Forgot Password?</a>
+                            <a href="#">Sign Up</a>
+                        </div>
                     </div>
-                    <div class="mt-1">
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer"
-                            routerLink="/home/sml-request-on-forgot-passowrd" style="color: var(--primary-color)">Forgot
-                            password?</a>
-                    </div>
+
                 </div>
+
+                <a href="#">
+                    <input type="submit" value="Login">
+                </a>
+
             </div>
         </div>
     </div>
+
 </div>
-
-<p-toast position="top-center" [breakpoints]="{'920px': {width: '100%', margin: '0 auto'}}"
-    styleClass="text-center"></p-toast>
-
-<style>
-    :host(.p-password > .p-inputtext) {
-        width: 172px;
-    }
-</style>

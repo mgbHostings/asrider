@@ -3,10 +3,14 @@
 .box {
     position: relative;
     width: 380px;
-    height: 310px;
+    max-height: 100%;
     border-radius: 8px;
     overflow: hidden;
     opacity: 0.9;
+}
+
+.as_log_pages {
+    height: 77%;
 }
 
 .box::before{

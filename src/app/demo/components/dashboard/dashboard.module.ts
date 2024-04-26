@@ -11,6 +11,11 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { DashboardsRoutingModule } from './dashboard-routing.module';
 import { SkeletonModule } from 'primeng/skeleton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TabViewModule } from 'primeng/tabview';
+import { SelectButtonModule } from 'primeng/selectbutton';
+
+
+
 @NgModule({
     imports: [
         CommonModule,
@@ -23,7 +28,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
         ButtonModule,
         DashboardsRoutingModule,
         SkeletonModule,
-        ProgressSpinnerModule
+        ProgressSpinnerModule,
+        TabViewModule,
+        SelectButtonModule
     ],
     declarations: [DashboardComponent]
 })

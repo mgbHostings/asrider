@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import { LoginComponent } from './demo/components/login/login.component';
 import { FgpwdComponent } from './demo/components/fgpwd/fgpwd.component';
+import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './demo/components/dashboard/dashboard.component';
 
 @NgModule({
     imports: [
@@ -19,6 +21,14 @@ import { FgpwdComponent } from './demo/components/fgpwd/fgpwd.component';
             {
                 path: 'sml-request-on-forgot-passowrd',
                 component: FgpwdComponent
+            },
+            {
+                path: 'signup',
+                component: SignupComponent
+            },
+            {
+                path: 'dashboard',
+                component: DashboardComponent
             },
             {
                 path: 'home', component: AppLayoutComponent,

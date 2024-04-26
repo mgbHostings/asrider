@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { ServicesService } from 'src/app/services.service';
+
 @Component({
     templateUrl: './dashboard.component.html',
     providers: [MessageService, ConfirmationService]
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
     public showSkeleton = true;
     private destroy$: Subject<void> = new Subject<void>();
     public dashboardData: any = [];
-
+    public activeIndex = 0;
     async ngOnInit() {
         await this.gridData();
         //await this.getprofilepicture();

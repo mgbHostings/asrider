@@ -1,41 +1,214 @@
-<div class="grid">
-    <div class="col-12 lg:col-6 xl:col-3" #dashboardContent *ngFor="let dBord of dashboardData;">
-        <div class="card mb-0 ">
-            <div class="flex justify-content-between mb-3 ">
-                <div>
-                    <span class="block text-black-alpha-90 font-medium mb-3 text-4xl">{{dBord['header']}}</span>
-                    <span class="text-orange-500 text-3xl">{{dBord['cnt']}} </span>
+<div class="main_content">
+    <div class="dash_board_top">
+        <div class="as_logo">
+            <label><span class="as_logo_single">AS</span> Riders</label>
+        </div>
+    </div>
+
+    <div class="dash_board_body">
+        <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+            <p-tabPanel header="Dashboard" [ngClass]="{'tab_active':activeIndex==0}">
+
+                <div class="dashboard_here">
+                    <div class="main_header">
+                        <h2>Your Dashboard</h2>
+                    </div>
+
+                    <div class="y_dashboard">
+                        <div class="my_balance">
+                            <h6>Balance</h6>
+                            <div>
+                                <span class="rupees_cntnt rupees">1000</span>
+                            </div>
+                            <div class="balance_action">
+                                <p-button pButton pRipple label="Withdraw"></p-button>
+                            </div>
+                        </div>
+
+                        <div class="my_balance">
+                            <h6>Transactions</h6>
+                            <div>
+                                <span class="rupees_cntnt">100</span>
+                            </div>
+                            <div class="balance_action">
+                                <p-button pButton pRipple label="View"></p-button>
+                            </div>
+                        </div>
+
+                        <div class="my_balance">
+                            <h6>Team Balance</h6>
+                            <div>
+                                <span class="rupees_cntnt rupees">100</span>
+                            </div>
+                            <div class="balance_action">
+                                <p-button pButton pRipple label="View"></p-button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
+
+                <div class="our_products ">
+                    <div class="products_head">
+                        <h5>Products</h5>
+
+                        <div>
+                            <p-button pButton pRipple label="View All"></p-button>
+                        </div>
+                    </div>
+
+                    <div class="products_cntnt">
+                        <div class="flex h-full gap-3">
+                            <div class="product_card vip_0">
+                                <div class="user_images">
+
+                                </div>
+                                <div class="product_card_cntnt ">
+                                    <div class="cntnt_name">
+                                        <h6>Two Wheeler</h6>
+                                        <label>(TPU2.5L-C)</label>
+                                    </div>
+                                    <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                        <label class="flex gap-2"><span>Price: </span>
+                                            <h6 class="rupees">0</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>D-Income: </span>
+                                            <h6 class="rupees d_income">15.2</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>R-Income: </span>
+                                            <h6 class="rupees">5518.8</h6>
+                                        </label>
+                                        <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                    class="theme_color">0</span>/1</span>
+
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product_card vip_1">
+                                <div class="user_images">
+
+                                </div>
+                                <div class="product_card_cntnt ">
+                                    <div class="cntnt_name">
+                                        <h6>Two Wheeler</h6>
+                                        <label>(TPU2.5L-C)</label>
+                                    </div>
+                                    <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                        <label class="flex gap-2"><span>Price: </span>
+                                            <h6 class="rupees">650</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>D-Income: </span>
+                                            <h6 class="rupees d_income">64.8</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>R-Income: </span>
+                                            <h6 class="rupees">2916</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                    class="theme_color">0</span>/1</span>
+
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="invitation_code">
+                    <div class="invitation_references">
+                        <h6>Invite friends to get reward <span class="rupees">75</span></h6>
+                        <label>Invite friends to AS Riders and get <span class="rupees">75</span> when your friend
+                            purchase
+                            one product. they get <span class="rupees">25</span></label>
+                        <div>
+                            <label>Copy your code <strong>Asr001</strong></label>
+                        </div>
+                    </div>
+                    <div>
+                        <p-button pButton pRipple label="Submit"></p-button>
+                    </div>
+                </div>
+
+            </p-tabPanel>
+
+            <p-tabPanel header="Recharge">
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam
+                    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo. Nemo enim
+                    ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                    dolores
+                    eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius
+                    modi.
+                </p>
+            </p-tabPanel>
+
+            <p-tabPanel header="My Orders">
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+                    provident, similique sunt in culpa
+                    qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+                    est
+                    et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+                    quo
+                    minus.
+                </p>
+            </p-tabPanel>
+
+            <p-tabPanel header="Guide">
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+                    provident, similique sunt in culpa
+                    qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+                    est
+                    et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+                    quo
+                    minus.
+                </p>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+
+    <div class="dash_board_footer">
+        <div class="dash_board_footer_design">
+            <!-- <p-selectButton optionLabel="icon">
+                <ng-template>
+                    <i class="pi pi-home"></i>
+                </ng-template>
+            </p-selectButton> -->
+            <div class="dash_board_icon">
+                <span><i class="pi pi-home"></i></span>
+                <label for="">Home</label>
             </div>
-            <div *ngIf="![undefined,null,''].includes(dBord['newCnt'])">
-                <span class="text-green-500 text-2xl">{{dBord['newCnt']}} </span>
-                <span class="text-500 ml-4">New on today</span>
+
+            <div class="dash_board_icon">
+                <span><i class="pi pi-box"></i></span>
+                <label for="">Products</label>
             </div>
-            <div *ngIf="![undefined,null,''].includes(dBord['last7Cnt'])">
-                <span class="text-green-500 text-2xl">{{dBord['last7Cnt']}} </span>
-                <span class="text-500 ml-4">New last Week</span>
+
+            <div class="dash_board_icon">
+                <span><i class="pi pi-shopping-cart"></i></span>
+                <label for="">Cart</label>
             </div>
-            <div *ngIf="![undefined,null,''].includes(dBord['activeCnt'])">
-                <span class="text-green-500 text-2xl">{{dBord['activeCnt']}} </span>
-                <span class="text-500 ml-4">Active</span>
+
+            <div class="dash_board_icon">
+                <span><i class="pi pi-user"></i></span>
+                <label for="">Account</label>
             </div>
-            <div *ngIf="![undefined,null,''].includes(dBord['inActiveCnt'])">
-                <span class="text-red-500 text-2xl">{{dBord['inActiveCnt']}} </span>
-                <span class="text-500 ml-4">In Active</span>
-            </div>
+
+
         </div>
     </div>
-</div>
-
-<div  style="margin-top:20%"
-    *ngIf="dashboardData.length==0">
-    <div class="flex flex-column align-items-center justify-content-center">
-        <div class="text-orange-500 text-2xl font-medium">
-            Please wait
-        </div>
-        <p-progressSpinner styleClass="w-4rem h-4rem vertical-align-middle" strokeWidth="8" fill="var(--surface-ground)"
-            animationDuration=".5s">
-        </p-progressSpinner>
-    </div>
-
 </div>
