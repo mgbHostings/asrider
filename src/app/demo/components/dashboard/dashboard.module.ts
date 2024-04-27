@@ -13,7 +13,8 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TabViewModule } from 'primeng/tabview';
 import { SelectButtonModule } from 'primeng/selectbutton';
-
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { SelectButtonModule } from 'primeng/selectbutton';
         SkeletonModule,
         ProgressSpinnerModule,
         TabViewModule,
-        SelectButtonModule
+        SelectButtonModule,
+        DropdownModule,
+        InputTextModule
     ],
     declarations: [DashboardComponent]
 })
