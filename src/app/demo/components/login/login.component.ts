@@ -106,6 +106,9 @@ export class LoginComponent {
     } catch (e) {
 
     }
+  }
 
+  onLoginClick() {
+    this.router.navigateByUrl('/home/as-riders-dashboard');
   }
 }

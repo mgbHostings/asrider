@@ -14,6 +14,8 @@ import { PasswordModule } from 'primeng/password';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { PanelModule } from 'primeng/panel';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,9 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         ButtonModule,
         OverlayPanelModule,
         AvatarModule,
-        AvatarGroupModule
+        AvatarGroupModule,
+        PanelModule,
+        SharedModule
     ],
     providers: [
         // { provide: LocationStrategy, useClass: HashLocationStrategy },
