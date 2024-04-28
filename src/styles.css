@@ -2,6 +2,10 @@
 
 :root {
     --theme_color: #018abe;
+
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    --linear_gradient: linear-gradient(#0dcaf0, rgb(1 138 190));
 }
 
 app-root,
@@ -55,6 +59,37 @@ h4,
 h5,
 h6 {
     margin: 0 !important;
+}
+
+ol,
+ul {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.p-tabview-nav-content ul {
+    flex-direction: initial;
+    padding: 0;
+    gap: initial;
+}
+
+.p-inputtext:enabled:focus,
+.p-dropdown:not(.p-disabled).p-focus {
+    box-shadow:
+        inset 0 0 0 1px var(--theme_color),
+        inset 0 0 0 1px var(--theme_color),
+        inset 0 0 0 1px var(--theme_color),
+        inset 0 0 0 1px var(--theme_color);
+}
+
+.p-inputtext:enabled:focus,
+.p-dropdown:not(.p-disabled).p-focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+    border-color: var(--theme_color);
 }
 
 .as_logo_cntnt {
@@ -210,14 +245,15 @@ p-tabview {
     display: flex;
     flex: 1;
     flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .p-tabview {
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    /* overflow: hidden; */
+    width: 100%;
+    overflow: hidden;
 }
 
 .p-tabview .p-tabview-nav li {
@@ -232,15 +268,16 @@ p-tabview {
 .p-tabview-panels {
     display: flex;
     flex: 1;
-    /* overflow: hidden; */
-    /* padding-top: 0 !important; */
+    overflow: hidden;
+    padding: 0 !important;
 }
 
 .tab_active {
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* overflow: hidden; */
+    overflow: auto;
+    width: 100%;
 }
 
 .dash_board_footer {
@@ -270,18 +307,27 @@ p-tabview {
     color: #fff;
     font-size: 20px;
 }
+
 .rupees::before {
     content: "\20B9";
+    font-family: "primeicons";
+    margin-right: 2px;
+}
+
+.percentage::after {
+    content: "\0025";
+    font-family: "primeicons";
+    margin-right: 2px;
 }
 
 .y_dashboard {
-    background-color: var(--theme_color);
+    background: var(--linear_gradient);
     border-radius: 10px;
     color: #fff;
     padding: 10px;
     display: flex;
     gap: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: var(--shadow);
 }
 
 .main_header h2 {
@@ -290,33 +336,50 @@ p-tabview {
     color: var(--theme_color);
 }
 
-.dashboard_here {
+/* .cntnt_card {
     display: flex;
     flex-direction: column;
     gap: 7px;
-}
+    padding: 10px;
+} */
 
 .balance_action {
     display: flex;
     flex: 1;
 }
 
-.balance_action .p-button, .invitation_code .p-button {
+.p-button {
     color: #ffffff;
-    background: #00739f;
+    background: var(--theme_color);
+}
+
+.balance_action .p-button {
+    border-radius: 50px;
+    background: #0288bb;
+}
+
+.balance_action .p-button:enabled:hover {
+    background: #0583b3;
+}
+
+.balance_action .p-button:enabled:focus {
+    background: #0583b3;
+}
+
+.invitation_code .p-button {
     border-radius: 50px;
 }
 
-.balance_action p-button.p-button, .invitation_code p-button.p-button {
+p-button.p-button {
     padding: 0;
 }
 
-.balance_action .p-button:enabled:hover, .invitation_code .p-button:enabled:hover {
-    background: #025b7d;
+.p-button:enabled:hover {
+    background: #007faf;
 }
 
-.balance_action .p-button:enabled:focus, .invitation_code .p-button:enabled:focus {
-    background: #025b7d;
+.p-button:enabled:focus {
+    background: #007faf;
 }
 
 .dash_board_footer_design {
@@ -350,12 +413,19 @@ p-tabview {
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 25px;
+    /* gap: 5px; */
     /* padding-top: 10px; */
     /* overflow: hidden; */
 }
 
-.our_products {
+.tab_active .p-tabview-panel > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px;
+}
+
+.cntnt_card {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -363,7 +433,7 @@ p-tabview {
     /* overflow: hidden; */
 }
 
-.our_products h5 {
+.cntnt_card h5 {
     color: var(--theme_color);
     margin: 0;
 }
@@ -407,19 +477,24 @@ p-tabview {
     /* overflow: hidden; */
     background-color: #ffffff;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: var(--shadow);
 }
 
-.product_card h6 {
+.product_card h6,
+.cntnt_name h6 {
     color: var(--theme_color);
     font-size: 16px;
 }
 
 .user_images {
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
-    background-color: #e9e9e9;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_images img {
+    width: 180px;
 }
 
 .product_card_cntnt {
@@ -429,6 +504,7 @@ p-tabview {
     align-items: center;
     justify-content: center;
     color: #8b8b8b;
+    width: 100%;
 }
 
 .cntnt_name {
@@ -436,7 +512,8 @@ p-tabview {
     align-items: center;
     gap: 5px;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .d_income {
@@ -477,7 +554,7 @@ p-tabview {
     box-shadow: #fdcf1c 0px 3px 8px;
 }
 
-.invitation_code{
+.invitation_code {
     display: flex;
     flex-direction: column;
     gap: 33px;
@@ -498,12 +575,11 @@ p-tabview {
     gap: 10px;
 }
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     * {
         font-size: 12px;
     }
-}
-
+} */
 
 .recharge_cntnt {
     display: flex;
@@ -516,14 +592,191 @@ p-tabview {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: var(--theme_color);
+    background: var(--linear_gradient);
     border-radius: 10px;
-    min-height: 87px;
     width: 100%;
+    box-shadow: var(--shadow);
+    padding: 10px;
 }
+
+.payments_input input[type="text"] {
+    width: 100%;
+    background-image: url(./assets/demo/images/indian_rupee.png);
+    background-size: 11px;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: flex;
+    padding-left: 32px;
+}
+
+.recharge_card * {
+    color: #fff;
+}
+
 .recharge_body {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 20px;
 }
+
+.drop_down .p-dropdown {
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
+
+.payments_cntnt {
+    display: flex;
+    flex-flow: column;
+    gap: 7px;
+}
+
+.payment_one {
+    display: flex;
+    background-color: var(--theme_color);
+    padding: 7px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.recharge_button {
+    display: flex;
+    flex-direction: column;
+}
+
+.choosing_button {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+}
+.choosing_button .p-button {
+    border-radius: 50px;
+    flex: 1;
+}
+
+.choosing_button .p-button button {
+    width: 100%;
+    padding: 5px 10px !important;
+}
+
+.orders_body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.my_orders {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 20px 0px;
+}
+
+.order_list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.my_orders .user_images img {
+    width: 129px;
+}
+
+.my_orders small {
+    color: #8b8b8b;
+}
+
+.order_list_cntnt {
+    display: flex;
+    flex-direction: column;
+}
+
+.order_list .cntnt_name {
+    align-items: flex-start;
+}
+
+.ellipse {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* teams */
+
+.team {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.service_card {
+    padding: 2em 1.5em;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-top: 5px solid #018abe;
+}
+
+.service_card h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--theme_color);
+    margin: 1em 0;
+    z-index: 3;
+}
+
+.service_card p {
+    color: #575a7b;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    z-index: 3;
+}
+
+.service_card .icon-wrapper {
+    background-color: #0882ab;
+    height: 100px;
+    width: 100px;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid var(--theme_color);
+}
+
+.service_card .icon-wrapper span {
+    font-size: 30px;
+}
+
+.team_commition_div {
+    display: flex;
+    gap: 15px;
+}
+.team_commition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* teams end */
