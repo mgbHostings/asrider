@@ -233,7 +233,7 @@ p-tabview {
     display: flex;
     flex: 1;
     /* overflow: hidden; */
-    padding-top: 0 !important;
+    /* padding-top: 0 !important; */
 }
 
 .tab_active {
@@ -293,7 +293,7 @@ p-tabview {
 .dashboard_here {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
 }
 
 .balance_action {
@@ -351,6 +351,7 @@ p-tabview {
     flex-direction: column;
     height: 100%;
     gap: 25px;
+    /* padding-top: 10px; */
     /* overflow: hidden; */
 }
 
@@ -501,4 +502,28 @@ p-tabview {
     * {
         font-size: 12px;
     }
+}
+
+
+.recharge_cntnt {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+}
+
+.recharge_card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--theme_color);
+    border-radius: 10px;
+    min-height: 87px;
+    width: 100%;
+}
+.recharge_body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
 }
