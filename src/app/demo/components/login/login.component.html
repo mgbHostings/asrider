@@ -15,26 +15,26 @@
                 <h2>Login</h2>
                 <div class="form_1">
                     <div class="inputBox">
-                        <input type="text" required="required" placeholder="Mobile Number">
+                        <input type="text" pInputText required="required" placeholder="Mobile Number">
                         <!-- <span>Mobile phone number</span> -->
                         <i></i>
                     </div>
 
                     <div>
                         <div class="inputBox">
-                            <input type="password" required="required" placeholder="Security Password">
+                            <input type="password" pInputText required="required" placeholder="Security Password">
                             <!-- <span></span> -->
                             <i></i>
                         </div>
                         <div class="links">
                             <a href="#">Forgot Password?</a>
-                            <a href="#">Sign Up</a>
+                            <a href="/signup">Sign Up</a>
                         </div>
                     </div>
 
                 </div>
 
-                <button (click)="onLoginClick()">Login</button>
+                <p-button pButton pRipple label="Login" (click)="onLoginClick()"></p-button>
                 <!-- <input type="submit" value="Login"> -->
             </div>
         </div>

@@ -9,6 +9,8 @@
 }
 
 app-root,
+app-layout,
+.layout-wrapper,
 ng-component,
 app-login,
 app-signup,
@@ -374,6 +376,10 @@ p-button.p-button {
     padding: 0;
 }
 
+p-button.p-button button {
+    width: 100%;
+}
+
 .p-button:enabled:hover {
     background: #007faf;
 }
@@ -564,9 +570,9 @@ p-button.p-button {
     background-color: #f0f8ff;
     background-image: url(./assets/demo/images/referal_img/referal_img.png);
     background-position: bottom;
-    background-position: 209px 39px;
+    background-position: 214px 59px;
     background-repeat: no-repeat;
-    background-size: 191px;
+    background-size: 200px;
 }
 
 .invitation_references {
@@ -769,7 +775,7 @@ input {
 
 .team_commition_div {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 .team_commition {
     display: flex;

@@ -25,6 +25,7 @@ import { SignupComponent } from './signup/signup.component';
                 path: 'signup',
                 component: SignupComponent
             },
+
             {
                 path: 'home', component: AppLayoutComponent,
                 children: [

@@ -1,8 +1,8 @@
 <div class="layout-wrapper">
     <!-- <app-topbar></app-topbar> -->
     <!-- class="layout-main-container" -->
-    <div >
-        <div class="layout-main layout_omain">
+    <div class="flex flex-column overflow-hidden h-full">
+        <div class="layout-main layout_omain flex flex-column overflow-hidden h-full">
             <router-outlet></router-outlet>
         </div>
         <app-footer></app-footer>
@@ -13,7 +13,7 @@
 
 
 <style>
-    .layout_omain {
+    .layout_main {
         overflow: hidden;
         display: flex;
         height: 100%;
