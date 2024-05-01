@@ -22,7 +22,7 @@ import { SignupComponent } from './signup/signup.component';
                 component: FgpwdComponent
             },
             {
-                path: 'asrider/signup',
+                path: 'signup',
                 component: SignupComponent
             },
 
