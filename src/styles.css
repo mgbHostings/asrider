@@ -108,6 +108,7 @@ ul {
     border-bottom: 1px solid var(--theme_color);
     width: fit-content;
 }
+
 .as_logo label {
     color: var(--theme_color);
     font-size: 18px;
