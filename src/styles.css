@@ -1,37 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900%display=swap");
-
 :root {
     --theme_color: #018abe;
-
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
     --linear_gradient: linear-gradient(#0dcaf0, rgb(1 138 190));
 }
 
-app-root,
-app-layout,
-.layout-wrapper,
-ng-component,
-app-login,
-app-signup,
-app-dashboard {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* width */
 ::-webkit-scrollbar {
     width: 0px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #ececec;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: silver;
     border-radius: 10px;
@@ -69,6 +49,19 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 7px;
+}
+
+app-root,
+app-layout,
+.layout-wrapper,
+ng-component,
+app-login,
+app-signup,
+app-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
 }
 
 .p-tabview-nav-content ul {
