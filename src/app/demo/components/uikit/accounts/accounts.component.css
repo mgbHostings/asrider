@@ -65,7 +65,7 @@ header .fa {
 }
 
 .user-img {
-    padding: 20px;
+    padding: 20px 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -108,6 +108,11 @@ header .fa {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    flex: 1;
+}
+
+.user_wallet h6 {
+    color: #20261d !important;
 }
 
 .user-settings h4 {

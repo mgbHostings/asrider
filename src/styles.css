@@ -579,11 +579,17 @@ p-button.p-button button {
     gap: 10px;
 }
 
-/* @media screen and (max-width: 576px) {
-    * {
-        font-size: 12px;
+@media screen and (max-width: 420px) {
+    .as_logo_cntnt {
+        width: 100%;
+        max-width: 280px;
     }
-} */
+
+    .box {
+        width: 280px !important;
+    }
+    
+}
 
 .recharge_cntnt {
     display: flex;
