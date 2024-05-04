@@ -1,29 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AccountsComponent } from './accounts.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ButtonModule } from 'primeng/button';
-
 
 const routes: Routes = [
   {
     path: "",
-    component: DashboardComponent,
+    component: AccountsComponent,
   }
 ]
 
 
+
 @NgModule({
-  declarations: [
-    DashboardComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule,
-    ButtonModule
+    SharedModule
   ]
 })
-export class DashboardModule { }
+export class AccountsModule { }

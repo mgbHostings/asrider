@@ -1,439 +1,428 @@
-<div class="main_content">
-    <div class="dash_board_top">
-        <div class="as_logo">
-            <label><span class="as_logo_single">AS</span> Riders</label>
-        </div>
-    </div>
+<div class="dash_board_body">
+    <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+        <p-tabPanel header="Dashboard" [ngClass]="{'tab_active':activeIndex==0}">
 
-    <div class="dash_board_body">
-        <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
-            <p-tabPanel header="Dashboard" [ngClass]="{'tab_active':activeIndex==0}">
-
-                <div class="cntnt_card">
-                    <div class="main_header">
-                        <h2>Your Dashboard</h2>
-                    </div>
-
-                    <div class="y_dashboard">
-                        <div class="my_balance">
-                            <h6>Balance</h6>
-                            <div>
-                                <span class="rupees_cntnt rupees">1000</span>
-                            </div>
-                            <div class="balance_action">
-                                <p-button pButton pRipple label="Withdraw"></p-button>
-                            </div>
-                        </div>
-
-                        <div class="my_balance">
-                            <h6>Transactions</h6>
-                            <div>
-                                <span class="rupees_cntnt">100</span>
-                            </div>
-                            <div class="balance_action">
-                                <p-button pButton pRipple label="View"></p-button>
-                            </div>
-                        </div>
-
-                        <div class="my_balance">
-                            <h6>Team Balance</h6>
-                            <div>
-                                <span class="rupees_cntnt rupees">100</span>
-                            </div>
-                            <div class="balance_action">
-                                <p-button pButton pRipple label="View"></p-button>
-                            </div>
-                        </div>
-                    </div>
-
-
+            <div class="cntnt_card">
+                <div class="main_header">
+                    <h2>Your Dashboard</h2>
                 </div>
 
-                <div class="cntnt_card ">
-                    <div class="products_head">
-                        <h5>Special Offers</h5>
-                    </div>
-
-                    <div class="products_cntnt">
-                        <div class="flex h-full gap-3 flex-wrap">
-                            <div class="product_card vip_0">
-                                <div class="user_images">
-                                    <img src="assets/demo/images/bikes/bike_1.png" alt="">
-                                </div>
-                                <div class="product_card_cntnt ">
-                                    <div class="cntnt_name">
-                                        <h6>KAWASAKI NINJA 650</h6>
-                                        <label>(649 CC)</label>
-                                    </div>
-                                    <div class="flex gap-1 flex-column align-items-center justify-content-center">
-                                        <label class="flex gap-2"><span>Price: </span>
-                                            <h6 class="rupees">0</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>D-Income: </span>
-                                            <h6 class="rupees d_income">15.2</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>R-Income: </span>
-                                            <h6 class="rupees">5518.8</h6>
-                                        </label>
-                                        <label class="flex gap-2"><span>Time Limit: </span> <span><span
-                                                    class="theme_color">1</span> hour</span>
-
-                                        </label>
-                                    </div>
-
-                                    <div class="choosing_button">
-                                        <p-button pButton pRipple label="Buy Now"></p-button>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnt_card ">
-                    <div class="products_head">
-                        <h5>Products</h5>
-
+                <div class="y_dashboard">
+                    <div class="my_balance">
+                        <h6>Balance</h6>
                         <div>
-                            <p-button pButton pRipple label="View All"></p-button>
+                            <span class="rupees_cntnt rupees">1000</span>
+                        </div>
+                        <div class="balance_action">
+                            <p-button pButton pRipple label="Withdraw"></p-button>
                         </div>
                     </div>
 
-                    <div class="products_cntnt">
-                        <div class="flex h-full gap-3 flex-wrap">
-                            <div class="product_card vip_0">
-                                <div class="user_images">
-                                    <img src="assets/demo/images/bikes/bike_1.png" alt="">
-                                </div>
-                                <div class="product_card_cntnt ">
-                                    <div class="cntnt_name">
-                                        <h6>KAWASAKI NINJA 650</h6>
-                                        <label>(649 CC)</label>
-                                    </div>
-                                    <div class="flex gap-1 flex-column align-items-center justify-content-center">
-                                        <label class="flex gap-2"><span>Price: </span>
-                                            <h6 class="rupees">0</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>D-Income: </span>
-                                            <h6 class="rupees d_income">15.2</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>R-Income: </span>
-                                            <h6 class="rupees">5518.8</h6>
-                                        </label>
-                                        <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
-                                                    class="theme_color">0</span>/1</span>
-
-                                        </label>
-                                    </div>
-
-                                    <div class="choosing_button">
-                                        <p-button pButton pRipple label="Buy Now"></p-button>
-                                        <p-button pButton pRipple label="Add to Cart"></p-button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product_card vip_1">
-                                <div class="user_images">
-                                    <img src="assets/demo/images/bikes/bike_2.png" alt="">
-                                </div>
-                                <div class="product_card_cntnt ">
-                                    <div class="cntnt_name">
-                                        <h6 class="ellipse">Suzuki Gixxer SF</h6>
-                                        <label>(200 CC )</label>
-                                    </div>
-                                    <div class="flex gap-1 flex-column align-items-center justify-content-center">
-                                        <label class="flex gap-2"><span>Price: </span>
-                                            <h6 class="rupees">650</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>D-Income: </span>
-                                            <h6 class="rupees d_income">64.8</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>R-Income: </span>
-                                            <h6 class="rupees">2916</h6>
-                                        </label>
-
-                                        <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
-                                                    class="theme_color">0</span>/1</span>
-
-                                        </label>
-                                    </div>
-
-                                    <div class="choosing_button">
-                                        <p-button pButton pRipple label="Buy Now"></p-button>
-                                        <p-button pButton pRipple label="Add to Cart"></p-button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnt_card">
-                    <div class="invitation_code">
-                        <div class="invitation_references">
-                            <h6>Invite friends to get reward <span class="rupees">75</span></h6>
-                            <label>Invite friends to AS Riders and get <span class="rupees">75</span> when your friend
-                                purchase
-                                one product. they get <span class="rupees">25</span></label>
-                            <div>
-                                <label>Copy your code <strong>Asr001</strong></label>
-                            </div>
-                        </div>
+                    <div class="my_balance">
+                        <h6>Transactions</h6>
                         <div>
-                            <p-button pButton pRipple label="Submit"></p-button>
+                            <span class="rupees_cntnt">100</span>
+                        </div>
+                        <div class="balance_action">
+                            <p-button pButton pRipple label="View"></p-button>
+                        </div>
+                    </div>
+
+                    <div class="my_balance">
+                        <h6>Team Balance</h6>
+                        <div>
+                            <span class="rupees_cntnt rupees">100</span>
+                        </div>
+                        <div class="balance_action">
+                            <p-button pButton pRipple label="View"></p-button>
                         </div>
                     </div>
                 </div>
 
-            </p-tabPanel>
 
-            <p-tabPanel header="Recharge" [ngClass]="{'tab_active':activeIndex==1}">
-                <div class="cntnt_card">
-                    <h5 class="theme_color">Recharge</h5>
+            </div>
 
-                    <div class="recharge_body">
-                        <div class="recharge_card">
-                            <h6>Available Balance</h6>
-                            <div>
-                                <h2 class="rupees">500</h2>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-column gap-1">
-                            <label>Choose Amount</label>
-
-                            <div class="drop_down">
-                                <p-dropdown optionLabel="name" [showClear]="true"
-                                    placeholder="Select a Plan"></p-dropdown>
-                            </div>
-                        </div>
-
-                        <div class="payments_input">
-                            <input type="text" pInputText />
-                        </div>
-
-                        <div class="payments_cntnt">
-                            <h6>Recharge Methods</h6>
-                            <div class="payment_one">
-                                <label>Payment 1</label>
-                            </div>
-                        </div>
-
-                        <div class="recharge_button">
-                            <button pButton pRipple label="Recharge"></button>
-                        </div>
-
-                        <div class="payments_cntnt">
-
-                            <h6>Recharge Rule:</h6>
-                            <div>
-                                <ol>
-                                    <li>The minimum deposit amount is <span class="rupees">650</span></li>
-                                    <li>If the account has not been received within half an hour after the successful
-                                        recharge, please contact customer service in time, and send us the account
-                                        number
-                                        and proof of successful payment.</li>
-
-                                    <li>Do not save the previous receiving account for transfer. The recharge receipt
-                                        must
-                                        match the payment amount. Avoid payment errors.</li>
-
-                                    <li>Do not transfer money to strangers, recharge must be completed in the
-                                        application.
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-
-
+            <div class="cntnt_card ">
+                <div class="products_head">
+                    <h5>Special Offers</h5>
                 </div>
-            </p-tabPanel>
 
-            <p-tabPanel header="Orders" [ngClass]="{'tab_active':activeIndex==2}">
-                <div class="cntnt_card">
-                    <div class="recharge_cntnt">
-                        <h5 class="theme_color">My Orders</h5>
-
-                        <div class="orders_body">
-                            <div class="my_orders">
-
-                                <div class="user_images">
-                                    <img src="assets/demo/images/bikes/bike_2.png" alt="">
-                                </div>
-
-                                <div class="order_list">
-                                    <div class="cntnt_name">
-                                        <h6 class="ellipse">Suzuki Gixxer SF</h6>
-                                        <label>(200 CC )</label>
-                                    </div>
-                                    <div class="order_list_cntnt">
-                                        <small class="">Ordered 21 May</small>
-                                    </div>
-                                </div>
+                <div class="products_cntnt">
+                    <div class="flex h-full gap-3 flex-wrap">
+                        <div class="product_card vip_0">
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_1.png" alt="">
                             </div>
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6>KAWASAKI NINJA 650</h6>
+                                    <label>(649 CC)</label>
+                                </div>
+                                <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                    <label class="flex gap-2"><span>Price: </span>
+                                        <h6 class="rupees">0</h6>
+                                    </label>
 
-                            <div class="my_orders">
+                                    <label class="flex gap-2"><span>D-Income: </span>
+                                        <h6 class="rupees d_income">15.2</h6>
+                                    </label>
 
-                                <div class="user_images">
-                                    <img src="assets/demo/images/bikes/bike_1.png" alt="">
+                                    <label class="flex gap-2"><span>R-Income: </span>
+                                        <h6 class="rupees">5518.8</h6>
+                                    </label>
+                                    <label class="flex gap-2"><span>Time Limit: </span> <span><span
+                                                class="theme_color">1</span> hour</span>
+
+                                    </label>
                                 </div>
 
-                                <div class="order_list">
-                                    <div class="cntnt_name">
-                                        <h6>KAWASAKI NINJA 650</h6>
-                                        <label>(649 CC)</label>
-                                    </div>
-                                    <div>
-                                        <small class="">Ordered 8 May</small>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="my_orders">
-
-                                <div class="user_images">
-                                    <img src="assets/demo/images/bikes/bike_2.png" alt="">
-                                </div>
-
-                                <div class="order_list">
-                                    <div class="cntnt_name">
-                                        <h6>Suzuki Gixxer SF</h6>
-                                        <label>(200 CC )</label>
-                                    </div>
-                                    <div>
-                                        <small class="">Ordered 28 April</small>
-                                    </div>
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
                                 </div>
                             </div>
                         </div>
+
 
                     </div>
                 </div>
-            </p-tabPanel>
+            </div>
 
-            <p-tabPanel header="Teams" [ngClass]="{'tab_active':activeIndex==3}">
-                <div class="cntnt_card">
-                    <div class="main_header">
-                        <h5 class="theme_color">Teams</h5>
-                    </div>
+            <div class="cntnt_card ">
+                <div class="products_head">
+                    <h5>Products</h5>
 
-                    <div class="y_dashboard">
-                        <div class="my_balance">
-                            <h6>Team investment</h6>
-                            <div>
-                                <span class="rupees_cntnt rupees">0</span>
-                            </div>
-                        </div>
-
-                        <div class="my_balance">
-                            <h6>Team size</h6>
-                            <div>
-                                <span class="rupees_cntnt">1</span>
-                            </div>
-                        </div>
-
+                    <div>
+                        <p-button pButton pRipple label="View All"></p-button>
                     </div>
                 </div>
 
-                <div>
-                    <div class="service_card">
-                        <div class="icon-wrapper">
-                            <span>1</span>
+                <div class="products_cntnt">
+                    <div class="flex h-full gap-3 flex-wrap">
+                        <div class="product_card vip_0">
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_1.png" alt="">
+                            </div>
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6>KAWASAKI NINJA 650</h6>
+                                    <label>(649 CC)</label>
+                                </div>
+                                <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                    <label class="flex gap-2"><span>Price: </span>
+                                        <h6 class="rupees">0</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>D-Income: </span>
+                                        <h6 class="rupees d_income">15.2</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>R-Income: </span>
+                                        <h6 class="rupees">5518.8</h6>
+                                    </label>
+                                    <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                class="theme_color">0</span>/1</span>
+
+                                    </label>
+                                </div>
+
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
+                                    <p-button pButton pRipple label="Add to Cart"></p-button>
+                                </div>
+                            </div>
                         </div>
 
-                        <h3>Team 1</h3>
+                        <div class="product_card vip_1">
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_2.png" alt="">
+                            </div>
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6 class="ellipse">Suzuki Gixxer SF</h6>
+                                    <label>(200 CC )</label>
+                                </div>
+                                <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                    <label class="flex gap-2"><span>Price: </span>
+                                        <h6 class="rupees">650</h6>
+                                    </label>
 
+                                    <label class="flex gap-2"><span>D-Income: </span>
+                                        <h6 class="rupees d_income">64.8</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>R-Income: </span>
+                                        <h6 class="rupees">2916</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                class="theme_color">0</span>/1</span>
+
+                                    </label>
+                                </div>
+
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
+                                    <p-button pButton pRipple label="Add to Cart"></p-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cntnt_card">
+                <div class="invitation_code">
+                    <div class="invitation_references">
+                        <h6>Invite friends to get reward <span class="rupees">75</span></h6>
+                        <label>Invite friends to AS Riders and get <span class="rupees">75</span> when your friend
+                            purchase
+                            one product. they get <span class="rupees">25</span></label>
+                        <div>
+                            <label>Copy your code <strong>Asr001</strong></label>
+                        </div>
+                    </div>
+                    <div>
+                        <p-button pButton pRipple label="Submit"></p-button>
+                    </div>
+                </div>
+            </div>
+
+        </p-tabPanel>
+
+        <p-tabPanel header="Recharge" [ngClass]="{'tab_active':activeIndex==1}">
+            <div class="cntnt_card">
+                <h5 class="theme_color">Recharge</h5>
+
+                <div class="recharge_body">
+                    <div class="recharge_card">
+                        <h6>Available Balance</h6>
+                        <div>
+                            <h2 class="rupees">500</h2>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-column gap-1">
+                        <label>Choose Amount</label>
+
+                        <div class="drop_down">
+                            <p-dropdown optionLabel="name" [showClear]="true" placeholder="Select a Plan"></p-dropdown>
+                        </div>
+                    </div>
+
+                    <div class="payments_input">
+                        <input type="text" pInputText />
+                    </div>
+
+                    <div class="payments_cntnt">
+                        <h6>Recharge Methods</h6>
+                        <div class="payment_one">
+                            <label>Payment 1</label>
+                        </div>
+                    </div>
+
+                    <div class="recharge_button">
+                        <button pButton pRipple label="Recharge"></button>
+                    </div>
+
+                    <div class="payments_cntnt">
+
+                        <h6>Recharge Rule:</h6>
+                        <div>
+                            <ol>
+                                <li>The minimum deposit amount is <span class="rupees">650</span></li>
+                                <li>If the account has not been received within half an hour after the successful
+                                    recharge, please contact customer service in time, and send us the account
+                                    number
+                                    and proof of successful payment.</li>
+
+                                <li>Do not save the previous receiving account for transfer. The recharge receipt
+                                    must
+                                    match the payment amount. Avoid payment errors.</li>
+
+                                <li>Do not transfer money to strangers, recharge must be completed in the
+                                    application.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </p-tabPanel>
+
+        <p-tabPanel header="Orders" [ngClass]="{'tab_active':activeIndex==2}">
+            <div class="cntnt_card">
+                <div class="recharge_cntnt">
+                    <h5 class="theme_color">My Orders</h5>
+
+                    <div class="orders_body">
+                        <div class="my_orders">
+
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_2.png" alt="">
+                            </div>
+
+                            <div class="order_list">
+                                <div class="cntnt_name">
+                                    <h6 class="ellipse">Suzuki Gixxer SF</h6>
+                                    <label>(200 CC )</label>
+                                </div>
+                                <div class="order_list_cntnt">
+                                    <small class="">Ordered 21 May</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my_orders">
+
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_1.png" alt="">
+                            </div>
+
+                            <div class="order_list">
+                                <div class="cntnt_name">
+                                    <h6>KAWASAKI NINJA 650</h6>
+                                    <label>(649 CC)</label>
+                                </div>
+                                <div>
+                                    <small class="">Ordered 8 May</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my_orders">
+
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_2.png" alt="">
+                            </div>
+
+                            <div class="order_list">
+                                <div class="cntnt_name">
+                                    <h6>Suzuki Gixxer SF</h6>
+                                    <label>(200 CC )</label>
+                                </div>
+                                <div>
+                                    <small class="">Ordered 28 April</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </p-tabPanel>
+
+        <p-tabPanel header="Teams" [ngClass]="{'tab_active':activeIndex==3}">
+            <div class="cntnt_card">
+                <div class="main_header">
+                    <h5 class="theme_color">Teams</h5>
+                </div>
+
+                <div class="y_dashboard">
+                    <div class="my_balance">
+                        <h6>Team investment</h6>
+                        <div>
+                            <span class="rupees_cntnt rupees">0</span>
+                        </div>
+                    </div>
+
+                    <div class="my_balance">
+                        <h6>Team size</h6>
+                        <div>
+                            <span class="rupees_cntnt">1</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <div class="service_card">
+                    <div class="icon-wrapper">
+                        <span>1</span>
+                    </div>
+
+                    <h3>Team 1</h3>
+
+                    <div class="team_commition">
+                        <label>Commition rate</label>
+                        <h5 class="theme_color percentage">15</h5>
+                    </div>
+
+                    <div class="team_commition_div">
                         <div class="team_commition">
-                            <label>Commition rate</label>
-                            <h5 class="theme_color percentage">15</h5>
+                            <label>Invite people</label>
+                            <h5 class="theme_color">1</h5>
                         </div>
-
-                        <div class="team_commition_div">
-                            <div class="team_commition">
-                                <label>Invite people</label>
-                                <h5 class="theme_color">1</h5>
-                            </div>
-                            <div class="team_commition">
-                                <label>Commission</label>
-                                <h5 class="theme_color rupees">0</h5>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a href="#">View Details</a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div>
-                    <div class="service_card">
-                        <div class="icon-wrapper">
-                            <span>2</span>
-                        </div>
-                        <h3>Team 2</h3>
                         <div class="team_commition">
-                            <label>Commition rate</label>
-                            <h5 class="theme_color percentage">15</h5>
-                        </div>
-
-                        <div class="team_commition_div">
-                            <div class="team_commition">
-                                <label>Invite people</label>
-                                <h5 class="theme_color">1</h5>
-                            </div>
-                            <div class="team_commition">
-                                <label>Commission</label>
-                                <h5 class="theme_color rupees">0</h5>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a href="#">View Details</a>
+                            <label>Commission</label>
+                            <h5 class="theme_color rupees">0</h5>
                         </div>
                     </div>
-                </div>
 
-                <div>
-                    <div class="service_card">
-                        <div class="icon-wrapper">
-                            <span>3</span>
-                        </div>
-                        <h3>Team 3</h3>
+                    <div>
+                        <a href="#">View Details</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <div class="service_card">
+                    <div class="icon-wrapper">
+                        <span>2</span>
+                    </div>
+                    <h3>Team 2</h3>
+                    <div class="team_commition">
+                        <label>Commition rate</label>
+                        <h5 class="theme_color percentage">15</h5>
+                    </div>
+
+                    <div class="team_commition_div">
                         <div class="team_commition">
-                            <label>Commition rate</label>
-                            <h5 class="theme_color percentage">15</h5>
+                            <label>Invite people</label>
+                            <h5 class="theme_color">1</h5>
                         </div>
-
-                        <div class="team_commition_div">
-                            <div class="team_commition">
-                                <label>Invite people</label>
-                                <h5 class="theme_color">1</h5>
-                            </div>
-                            <div class="team_commition">
-                                <label>Commission</label>
-                                <h5 class="theme_color rupees">0</h5>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a href="#">View Details</a>
+                        <div class="team_commition">
+                            <label>Commission</label>
+                            <h5 class="theme_color rupees">0</h5>
                         </div>
                     </div>
+
+                    <div>
+                        <a href="#">View Details</a>
+                    </div>
                 </div>
-            </p-tabPanel>
-        </p-tabView>
-    </div>
+            </div>
 
+            <div>
+                <div class="service_card">
+                    <div class="icon-wrapper">
+                        <span>3</span>
+                    </div>
+                    <h3>Team 3</h3>
+                    <div class="team_commition">
+                        <label>Commition rate</label>
+                        <h5 class="theme_color percentage">15</h5>
+                    </div>
 
+                    <div class="team_commition_div">
+                        <div class="team_commition">
+                            <label>Invite people</label>
+                            <h5 class="theme_color">1</h5>
+                        </div>
+                        <div class="team_commition">
+                            <label>Commission</label>
+                            <h5 class="theme_color rupees">0</h5>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </p-tabPanel>
+    </p-tabView>
 </div>

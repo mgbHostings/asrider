@@ -1,0 +1,159 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+/* HEADER */
+header {
+    background-image: linear-gradient(to left, #4d51aa, var(--theme_color));
+    background-color: var(--theme_color);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    color: #fff;
+    font-weight: 700;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .fa {
+    padding: 20px;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+/* CONTENT */
+.content {
+    display: flex;
+    flex: 1;
+    padding: 0 10px;
+}
+
+/* USER IMG */
+.profile_details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile_details h3 {
+    font-size: 20px;
+    color: var(--theme_color);
+    font-weight: 700;
+    flex: 1;
+}
+
+.profile_img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-img {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.user-img img {
+    border-radius: 50%;
+}
+
+.user-img .badge {
+    position: absolute;
+    top: 20px;
+    right: 130px;
+}
+
+.user-img .badge .fa {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: var(--theme_color);
+    box-shadow: 1px 2px 2px #333;
+}
+
+.profile_div{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+/* USER SETTINGS */
+
+.user-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-settings h4 {
+    color: #a2a2b1;
+    font-weight: 900;
+}
+
+.my_balance *,
+.order_details * {
+    color: var(--theme_color);
+}
+
+.user_wallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0px 10px; */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    /* border-radius: 5px; */
+    /* padding: 5px;*/
+}
+
+.user_wallet >div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    flex: 1;
+    padding: 5px;
+    min-height: 66px;
+}
+.user-settings li a {
+    text-decoration: none;
+    color: #313230;
+}
+
+.user-settings li a .fa,
+.user-settings li a .fab {
+    color: var(--theme_color);
+    margin-right: 20px;
+}
+
+.list_settings {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.list_settings a {
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

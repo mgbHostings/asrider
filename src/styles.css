@@ -1,5 +1,6 @@
 :root {
     --theme_color: #018abe;
+    --theme_gray_color: #a2a2b1;
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --linear_gradient: linear-gradient(#0dcaf0, rgb(1 138 190));
 
@@ -59,7 +60,8 @@ app-layout,
 ng-component,
 app-login,
 app-signup,
-app-dashboard {
+app-dashboard,
+app-accounts {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -782,3 +784,7 @@ input {
 }
 
 /* teams end */
+
+
+
+

@@ -31,6 +31,7 @@ import { SignupComponent } from './signup/signup.component';
                 children: [
                     { path: "", redirectTo: 'home', pathMatch: 'full' },
                     { path: 'as-riders-dashboard', loadChildren: () => import('./demo/components/uikit/dashboard/dashboard.module').then(m => m.DashboardModule) },
+                    { path: 'as-riders-accounts', loadChildren: () => import('./demo/components/uikit/accounts/accounts.module').then(m => m.AccountsModule) },
                 ]
             },
             { path: '**', redirectTo: 'sml-signin' },
