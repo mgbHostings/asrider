@@ -135,4 +135,8 @@ export class FgpwdComponent {
     }
 
   }
+
+  onLoginClick() {
+    this.router.navigateByUrl('');
+  }
 }

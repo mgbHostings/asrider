@@ -18,7 +18,7 @@ import { SignupComponent } from './signup/signup.component';
                 component: LoginComponent
             },
             {
-                path: 'sml-request-on-forgot-passowrd',
+                path: 'as-riders-forgot-passowrd',
                 component: FgpwdComponent
             },
             {

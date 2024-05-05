@@ -60,6 +60,7 @@ app-layout,
 ng-component,
 app-login,
 app-signup,
+app-fgpwd,
 app-dashboard,
 app-accounts {
     display: flex;

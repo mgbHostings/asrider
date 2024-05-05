@@ -32,15 +32,14 @@
                     <div class="list_settings_div">
                         <h4 class="theme_color">User Settings</h4>
                         <div class="list_settings">
-                            <a href="">
+                            <div (click)="onFooterClick('addaccount')">
                                 <i class="pi pi-user"></i>
                                 <label>My account</label>
-                            </a>
-                            <a href="">
+                            </div>
+                            <div (click)="onFooterClick('security')">
                                 <i class="pi pi-shield"></i>
                                 <label>Security center</label>
-                            </a>
-                            <a href="">
+                            </div> <a href="">
                                 <i class="pi pi-file-check"></i>
                                 <label>Consumption list</label>
                             </a>
@@ -71,10 +70,10 @@
 
                     <div class="signout">
                         <!-- <button pButton>Sign out</button> -->
-                        <p-button  pRipple label="Sign out"></p-button>
+                        <p-button pRipple label="Sign out"></p-button>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
