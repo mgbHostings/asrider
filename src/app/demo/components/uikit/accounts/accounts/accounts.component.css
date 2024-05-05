@@ -38,7 +38,9 @@ header .fa {
 .content {
     display: flex;
     flex: 1;
-    padding: 0 10px 10px;
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 10px;
 }
 
 /* USER IMG */
@@ -168,7 +170,7 @@ header .fa {
     display: flex;
     gap: 10px;
     align-items: center;
-    padding: 5px 10px;
+    padding: 10px;
     color: black;
     background-color: #e8edef;
     border-radius: 3px;

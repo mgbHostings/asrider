@@ -353,6 +353,9 @@ p-tabview {
     color: #ffffff;
     background: var(--theme_color);
 }
+.signout .p-button {
+    width: 100%;
+}
 
 .balance_action .p-button {
     border-radius: 50px;
