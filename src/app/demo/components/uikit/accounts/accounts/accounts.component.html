@@ -32,39 +32,45 @@
                     <div class="list_settings_div">
                         <h4 class="theme_color">User Settings</h4>
                         <div class="list_settings">
-                            <div (click)="onFooterClick('addaccount')">
+                            <div class="list_settings_tab" (click)="onFooterClick('addaccount')">
                                 <i class="pi pi-user"></i>
                                 <label>My account</label>
                             </div>
-                            <div (click)="onFooterClick('security')">
+
+                            <div class="list_settings_tab" (click)="onFooterClick('security')">
                                 <i class="pi pi-shield"></i>
                                 <label>Security center</label>
-                            </div> <a href="">
+                            </div>
+
+                            <div class="list_settings_tab" (click)="onFooterClick('consumption')">
                                 <i class="pi pi-file-check"></i>
                                 <label>Consumption list</label>
-                            </a>
-                            <!-- </div>
-                    </div>
-
-                    <div class="list_settings_div">
-                        <h4>APPLICATION SETTINGS</h4>
-                        <div class="list_settings"> -->
-                            <a href="">
+                            </div>
+                   
+                            <div class="list_settings_tab" (click)="onFooterClick('finance')">
                                 <i class="pi pi-chart-bar"></i>
                                 <label>Finance Product</label>
-                            </a>
-                            <a href="">
+                            </div>
+
+                            <div class="list_settings_tab" (click)="onFooterClick('help')">
                                 <i class="pi pi-question-circle"></i>
                                 <label>Help center</label>
-                            </a>
-                            <a href="">
+                            </div>
+
+                            <div class="list_settings_tab" (click)="onFooterClick('about')">
                                 <i class="pi pi-sitemap"></i>
                                 <label>About us</label>
-                            </a>
-                            <a href="">
+                            </div>
+                            
+                            <div class="list_settings_tab" (click)="onFooterClick('referrals')">
+                                <i class="pi pi-sitemap"></i>
+                                <label>Referrals</label>
+                            </div>
+
+                            <div class="list_settings_tab" (click)="onFooterClick('consumption')">
                                 <i class="pi pi-gift"></i>
                                 <label>Redeem code</label>
-                            </a>
+                            </div>
                         </div>
                     </div>
 
