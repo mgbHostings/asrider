@@ -23,6 +23,7 @@ import { ChipModule } from 'primeng/chip';
 import { TooltipModule } from 'primeng/tooltip';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -51,7 +52,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         ChipModule,
         TooltipModule,
         AvatarModule,
-        AvatarGroupModule
+        AvatarGroupModule,
+        SharedModule
     ],
     exports: [AppLayoutComponent]
 })

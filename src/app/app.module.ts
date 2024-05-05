@@ -15,7 +15,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { PanelModule } from 'primeng/panel';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '../../src/app/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -30,7 +30,6 @@ import { SharedModule } from './shared/shared.module';
         AppLayoutModule,
         InputTextModule,
         PasswordModule,
-        ButtonModule,
         OverlayPanelModule,
         AvatarModule,
         AvatarGroupModule,
