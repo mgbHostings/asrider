@@ -311,6 +311,10 @@ p-tabview {
     font-size: 20px;
 }
 
+.rupees, .percentage{
+    white-space: nowrap;
+}
+
 .rupees::before {
     content: "\20B9";
     font-family: "primeicons";
@@ -535,32 +539,32 @@ p-button.p-button button {
 }
 
 .vip_0 {
-    border: 1px solid #8b8b8b;
+    border: 2px solid #8b8b8b;
     box-shadow: #8b8b8b 0px 3px 8px;
 }
 
 .vip_1 {
-    border: 1px solid #a57c4c;
+    border: 2px solid #a57c4c;
     box-shadow: #a57c4c 0px 3px 8px;
 }
 
 .vip_2 {
-    border: 1px solid #b8d8f5;
+    border: 2px solid #b8d8f5;
     box-shadow: #b8d8f5 0px 3px 8px;
 }
 
 .vip_3 {
-    border: 1px solid #fe7f1b;
+    border: 2px solid #fe7f1b;
     box-shadow: #fe7f1b 0px 3px 8px;
 }
 
 .vip_4 {
-    border: 1px solid #97a9ba;
+    border: 2px solid #97a9ba;
     box-shadow: #97a9ba 0px 3px 8px;
 }
 
 .vip_5 {
-    border: 1px solid #fdcf1c;
+    border: 2px solid #fdcf1c;
     box-shadow: #fdcf1c 0px 3px 8px;
 }
 
