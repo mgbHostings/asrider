@@ -39,7 +39,7 @@ header .fa {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0 10px 10px;
     gap: 10px;
 }
 

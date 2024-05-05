@@ -178,4 +178,8 @@ export class AppTopBarComponent implements OnInit {
     closeCallback(e: any): void {
         this.sidebarRef.close(e);
     }
+
+    onLogoClick(){
+        this.router.navigate(['home/as-riders-dashboard'])
+    }
 }

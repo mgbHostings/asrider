@@ -62,7 +62,8 @@ app-login,
 app-signup,
 app-fgpwd,
 app-dashboard,
-app-accounts {
+app-accounts,
+app-product {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -803,4 +804,14 @@ input {
     flex: 1;
     display: flex;
     align-items: end;
+}
+
+.finance_ivesting {
+    display: flex;
+    gap: 10px;
+}
+
+.inline_gap{
+    display: flex;
+    gap: 10px;
 }

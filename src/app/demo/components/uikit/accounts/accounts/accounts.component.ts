@@ -14,6 +14,10 @@ export class AccountsComponent {
   constructor(public layoutService: LayoutService, public appService: ServicesService) { }
 
   onFooterClick(ctrl: string) {
-      this._router.navigate([`home/as-riders-${ctrl}`]);
+    this._router.navigate([`home/as-riders-${ctrl}`]);
+  }
+
+  onSignOutClick(ctrl: string) {
+    this._router.navigate([ctrl]);
   }
 }

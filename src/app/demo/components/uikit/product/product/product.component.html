@@ -1,1 +1,232 @@
-<p>product works!</p>
+<div class="dash_board_body">
+    <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+        <p-tabPanel header="Products" [ngClass]="{'tab_active':activeIndex==0}">
+
+            <div class="cntnt_card ">
+                <div class="products_head">
+                    <h5>Products</h5>
+
+                    <div>
+                        <!-- <p-button pButton pRipple label="View All"></p-button> -->
+                    </div>
+                </div>
+
+                <div class="products_cntnt">
+                    <div class="flex h-full gap-3 flex-wrap">
+                        <div class="product_card vip_0">
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_1.png" alt="">
+                            </div>
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6>KAWASAKI NINJA 650</h6>
+                                    <label>(649 CC)</label>
+                                </div>
+                                <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                    <label class="flex gap-2"><span>Price: </span>
+                                        <h6 class="rupees">0</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>D-Income: </span>
+                                        <h6 class="rupees d_income">15.2</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>R-Income: </span>
+                                        <h6 class="rupees">5518.8</h6>
+                                    </label>
+                                    <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                class="theme_color">0</span>/1</span>
+
+                                    </label>
+                                </div>
+
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
+                                    <p-button pButton pRipple label="Add to Cart"></p-button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product_card vip_1">
+                            <div class="user_images">
+                                <img src="assets/demo/images/bikes/bike_2.png" alt="">
+                            </div>
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6 class="ellipse">Suzuki Gixxer SF</h6>
+                                    <label>(200 CC )</label>
+                                </div>
+                                <div class="flex gap-1 flex-column align-items-center justify-content-center">
+                                    <label class="flex gap-2"><span>Price: </span>
+                                        <h6 class="rupees">650</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>D-Income: </span>
+                                        <h6 class="rupees d_income">64.8</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>R-Income: </span>
+                                        <h6 class="rupees">2916</h6>
+                                    </label>
+
+                                    <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                class="theme_color">0</span>/1</span>
+
+                                    </label>
+                                </div>
+
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
+                                    <p-button pButton pRipple label="Add to Cart"></p-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </p-tabPanel>
+
+        <p-tabPanel header="Finance" [ngClass]="{'tab_active':activeIndex==1}">
+            <div class="cntnt_card ">
+                <div class="y_dashboard flex-column">
+                    <div class="my_balance">
+                        <div>
+                            <span class="rupees_cntnt rupees">0</span>
+                        </div>
+                        <h6>Cumulative Income</h6>
+                    </div>
+                    <div class="finance_ivesting">
+                        <div class="my_balance">
+                            <div>
+                                <span class="rupees_cntnt rupees">0</span>
+                            </div>
+                            <h6>Are Investing</h6>
+                        </div>
+                        <div class="my_balance">
+                            <div>
+                                <span class="rupees_cntnt rupees">0</span>
+                            </div>
+                            <h6>Expected Return</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cntnt_card ">
+
+
+
+                <div class="products_head">
+                    <h5 class="inline_gap"> <i class="pi pi-chart-bar"></i> Finance Products</h5>
+
+                    <div>
+                        <!-- <p-button pButton pRipple label="View All"></p-button> -->
+                    </div>
+                </div>
+
+                <div class="products_cntnt">
+                    <div class="flex h-full gap-3 flex-column flex-wrap">
+                        <div class="product_card w-full vip_0">
+
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6>Investment Fund Type A</h6>
+                                    <!-- <label>(649 CC)</label> -->
+                                </div>
+                                <div class="flex gap-2 w-full align-items-cente flex-wrap justify-content-center">
+                                    <div class="flex gap-2 justify-content-center w-4 align-items-center">
+                                        <div class="flex-1 flex align-items-center justify-content-center">
+                                            
+                                            <i class="pi pi-chart-line theme_color" style="font-size: 25px;"></i>
+                                        </div>
+                                        <div class="flex-1 flex flex-column align-items-center justify-content-center">
+                                            <h6 class="percentage d_income">33.33  </h6>
+                                            <label>Retuns</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 flex-column w-9 flex-grow-1 align-items-center justify-content-center">
+
+
+                                        <label class="flex gap-2"><span>Buy </span>
+                                            <h6 class="rupees">300.00</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Term: </span>
+                                            <h6 class="flex align-items-center"><span>1 </span> days</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Income Due: </span>
+                                            <h6 class="rupees d_income">400.00</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                    class="theme_color">0</span>/1</span>
+
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
+                                    <p-button pButton pRipple label="Add to Cart"></p-button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product_card w-full vip_1">
+
+                            <div class="product_card_cntnt ">
+                                <div class="cntnt_name">
+                                    <h6>Investment Fund Type B</h6>
+                                    <!-- <label>(649 CC)</label> -->
+                                </div>
+                                <div class="flex gap-2 w-full align-items-cente flex-wrap justify-content-center">
+                                    <div class="flex gap-2 justify-content-center w-4 align-items-center">
+                                        <div class="flex-1 flex align-items-center justify-content-center">
+                                            
+                                            <i class="pi pi-chart-line theme_color" style="font-size: 25px;"></i>
+                                        </div>
+                                        <div class="flex-1 flex flex-column align-items-center justify-content-center">
+                                            <h6 class="percentage d_income">33.33  </h6>
+                                            <label>Retuns</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 flex-column w-9 flex-grow-1 align-items-center justify-content-center">
+
+
+                                        <label class="flex gap-2"><span>Buy </span>
+                                            <h6 class="rupees">300.00</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Term: </span>
+                                            <h6 class="flex align-items-center"><span>1 </span> days</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Income Due: </span>
+                                            <h6 class="rupees d_income">400.00</h6>
+                                        </label>
+
+                                        <label class="flex gap-2"><span>Purchase Limit: </span> <span><span
+                                                    class="theme_color">0</span>/1</span>
+
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="choosing_button">
+                                    <p-button pButton pRipple label="Buy Now"></p-button>
+                                    <p-button pButton pRipple label="Add to Cart"></p-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-tabPanel>
+
+
+    </p-tabView>
+</div>
