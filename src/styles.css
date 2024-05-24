@@ -3,8 +3,6 @@
     --theme_gray_color: #a2a2b1;
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --linear_gradient: linear-gradient(#0dcaf0, rgb(1 138 190));
-
-
 }
 
 ::-webkit-scrollbar {
@@ -20,6 +18,10 @@
     border-radius: 10px;
 }
 
+.sample_padding {
+    padding: 10px;
+}
+
 html,
 body {
     height: 100%;
@@ -33,7 +35,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 14px;
-    font-family: "Poppins", "sans-serif";
+    font-family: sans-serif;
     box-sizing: border-box;
 }
 
@@ -54,20 +56,32 @@ ul {
     gap: 7px;
 }
 
+.p-dropdown{
+    width: 100%;
+}
+
 app-root,
 app-layout,
 .layout-wrapper,
+app-cart,
 ng-component,
 app-login,
 app-signup,
 app-fgpwd,
 app-dashboard,
 app-accounts,
-app-product {
+app-product,
+app-addaccount,
+app-consumption,
+app-about,
+app-help,
+app-referals,
+app-finance {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .p-tabview-nav-content ul {
@@ -311,7 +325,8 @@ p-tabview {
     font-size: 20px;
 }
 
-.rupees, .percentage{
+.rupees,
+.percentage {
     white-space: nowrap;
 }
 
@@ -444,7 +459,7 @@ p-button.p-button button {
     flex: 1;
     flex-direction: column;
     gap: 7px;
-    /* overflow: hidden; */
+    /* overflow: auto; */
 }
 
 .cntnt_card h5 {
@@ -492,6 +507,10 @@ p-button.p-button button {
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: var(--shadow);
+}
+
+.product_card_cntnt label>span {
+    white-space: nowrap;
 }
 
 .product_card h6,
@@ -598,7 +617,6 @@ p-button.p-button button {
     .box {
         width: 280px !important;
     }
-    
 }
 
 .recharge_cntnt {
@@ -801,9 +819,6 @@ input {
 
 /* teams end */
 
-
-
-
 .count_details {
     flex: 1;
     display: flex;
@@ -815,7 +830,14 @@ input {
     gap: 10px;
 }
 
-.inline_gap{
+.inline_gap {
     display: flex;
     gap: 10px;
+}
+
+
+.form_control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }

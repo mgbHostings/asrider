@@ -23,4 +23,8 @@ const routes: Routes = [
     SharedModule,
   ]
 })
-export class AccountsModule { }
+export class AccountsModule {
+  
+ }
+
+

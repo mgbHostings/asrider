@@ -1,1 +1,77 @@
-<p>addaccount works!</p>
+<div class="dash_board_body">
+    <div class="cntnt_card sample_padding">
+        <div class="products_head">
+            <h5>Add Bank Account</h5>
+
+            <div>
+                <!-- <p-button pButton pRipple label="View All"></p-button> -->
+            </div>
+        </div>
+
+        <div class="products_cntnt">
+            <div class="flex h-full gap-3 flex-wrap">
+                <div class="form_control">
+                    <label class="form__label">Name</label>
+                    <div>
+                        <input type="text" pInputText placeholder="Enter Name">
+                    </div>
+                </div>
+
+                <div class="form_control">
+                    <label class="form__label">Name of Bank</label>
+                    <div>
+                        <p-dropdown optionLabel="name" placeholder="Select a Bank Name" />
+                    </div>
+                </div>
+
+                <div class="form_control">
+                    <label class="form__label">Account Number</label>
+                    <div>
+                        <input type="text" pInputText placeholder="Enter Account Number">
+                    </div>
+                </div>
+
+                <div class="form_control">
+                    <label class="form__label">IFSC Code</label>
+                    <div>
+                        <input type="text" pInputText placeholder="Enter IFSC Code">
+                    </div>
+                </div>
+
+
+                <div class="form_control">
+                    <label class="form__label">Transaction password verification </label>
+                    <div>
+                        <input type="text" pInputText placeholder="Enter Transaction password">
+                    </div>
+                </div>
+
+                <div class="choosing_button">
+                    <p-button pRipple label="Confirm" class="flex flex-1"></p-button>
+                    <p-button pRipple label="Reset form" class="flex flex-1"></p-button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-3 flex flex-column gap-3">
+            <h6>Rules:</h6>
+
+            <label> Note- Everyone is requested to mention correct bank details for avoidance of withdrawal failure.
+            </label>
+
+            <ul>
+                <li>Account number should be correct</li>
+                <li>IFSC should be correct</li>
+                <li>Bank name should be written in capitals </li>
+
+            </ul>
+
+            <label> Otherwise the transaction might fail and it would take 7 business days to be returned.
+                Sometimes
+                the wrong person can be credited with the money. So, Always be careful with money matters.
+            </label>
+
+        </div>
+    </div>
+</div>

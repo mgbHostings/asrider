@@ -34,17 +34,17 @@
                         <div class="list_settings">
                             <div class="list_settings_tab" (click)="onFooterClick('addaccount')">
                                 <i class="pi pi-user"></i>
-                                <label>My account</label>
+                                <label>Add Account</label>
                             </div>
 
                             <div class="list_settings_tab" (click)="onFooterClick('security')">
                                 <i class="pi pi-shield"></i>
-                                <label>Security center</label>
+                                <label>Security Center</label>
                             </div>
 
                             <div class="list_settings_tab" (click)="onFooterClick('consumption')">
                                 <i class="pi pi-file-check"></i>
-                                <label>Consumption list</label>
+                                <label>Consumption List</label>
                             </div>
 
                             <div class="list_settings_tab" (click)="onFooterClick('finance')">
@@ -54,12 +54,12 @@
 
                             <div class="list_settings_tab" (click)="onFooterClick('help')">
                                 <i class="pi pi-question-circle"></i>
-                                <label>Help center</label>
+                                <label>Help Center</label>
                             </div>
 
                             <div class="list_settings_tab" (click)="onFooterClick('about')">
-                                <i class="pi pi-sitemap"></i>
-                                <label>About us</label>
+                                <i class="pi pi-id-card"></i>
+                                <label>About Us</label>
                             </div>
 
                             <div class="list_settings_tab" (click)="onFooterClick('referrals')">
@@ -67,10 +67,22 @@
                                 <label>Referrals</label>
                             </div>
 
-                            <div class="list_settings_tab" (click)="onFooterClick('consumption')">
+                            <!-- <div class="list_settings_tab" (click)="confirm()">
                                 <i class="pi pi-gift"></i>
-                                <label>Redeem code</label>
+                                <label>Redeem Code</label>
+                            </div> -->
+
+
+                            <div class="list_settings_tab" (click)="showDialog()">
+                                <i class="pi pi-gift"></i>
+                                <label>Redeem Code</label>
                             </div>
+
+
+
+                            <!-- <p-confirmDialog header="Redemption code"  [style]="{width: '50vw'}">
+                                
+                            </p-confirmDialog> -->
                         </div>
                     </div>
 
@@ -83,3 +95,20 @@
 
         </div>
     </div>
+</div>
+
+<p-dialog header="Redemption code" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+
+    <div class="flex flex-column align-items-center justify-content-center gap-2">
+        <i class="pi pi-gift" style="font-size: 26px;"></i>
+        <span class="p-text-secondary block mb-5">Redeem to get rewards</span>
+    </div>
+
+    <div class="flex align-items-center gap-3 mb-3">
+        <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+
+    <div class="flex justify-content-end gap-2">
+        <p-button label="Confirm" (click)="visible = false" />
+    </div>
+</p-dialog>
